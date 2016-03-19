@@ -19,10 +19,6 @@ public class TemperatureAirFragment extends ShowParamFragment {
     public TemperatureAirFragment() {
     }
 
-    public TemperatureAirFragment(Context mContext) {
-        this.mContext = mContext;
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = super.onCreateView(inflater, container, savedInstanceState);

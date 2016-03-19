@@ -20,10 +20,6 @@ public class TemperatureWaterNowFragment extends ShowParamFragment {
     public TemperatureWaterNowFragment() {
     }
 
-    public TemperatureWaterNowFragment(Context mContext) {
-        this.mContext = mContext;
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = super.onCreateView(inflater, container, savedInstanceState);

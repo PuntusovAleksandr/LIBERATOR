@@ -21,10 +21,6 @@ public class PowerFragment extends ShowParamFragment {
     public PowerFragment() {
     }
 
-    public PowerFragment(Context mContext) {
-        this.mContext = mContext;
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = super.onCreateView(inflater, container, savedInstanceState);

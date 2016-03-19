@@ -27,7 +27,7 @@ public class StartActivity extends AppCompatActivity {
 
     private void setUi() {
         ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
-        TabAdapter adapter = new TabAdapter(fragmentManager, StartActivity.this);
+        TabAdapter adapter = new TabAdapter(fragmentManager);
         viewPager.setAdapter(adapter);
     }
 
