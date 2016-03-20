@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:src="@drawable/background_activ" />
+        android:src="@drawable/new_big_bac" />
 
 
 </RelativeLayout>
