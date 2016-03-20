@@ -11,4 +11,8 @@
     <string name="params_burner">Params burner</string>
     <string name="diagnostics_modules">Diagnostics modules</string>
     <string name="service_menu">Service menu</string>
+    <string name="blow">Продувка</string>
+    <string name="loading">Загрузка</string>
+    <string name="fairing">Розжиг</string>
+    <string name="stabil_burn">Стабилизация факела</string>
 </resources>

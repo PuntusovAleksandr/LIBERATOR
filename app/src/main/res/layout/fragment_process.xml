@@ -1,9 +1,36 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:theme="@style/AppTheme.AppBarOverlay"
+    tools:background="@color/black"
     tools:context="com.example.aleksandr.liberator.fragments.process_fragments.ProcessFragment">
 
+    <View
+        android:id="@+id/view_process"
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:layout_centerVertical="true" />
 
+    <TextView
+        android:id="@+id/tv_text_message_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/view_process"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/blow" />
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/iv_icon_process"
+        android:layout_width="@dimen/size_icon_process"
+        android:layout_height="@dimen/size_icon_process"
+        android:layout_below="@+id/view_process"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/blow" />
+
+</RelativeLayout>
