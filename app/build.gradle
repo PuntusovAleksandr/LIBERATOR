@@ -26,5 +26,6 @@ dependencies {
     compile 'com.android.support:design:24.0.0-alpha1'
     compile 'com.android.support:support-v4:23.2.1'
     compile 'com.android.support:support-v13:24.0.0-alpha1'
+    compile 'com.bettervectordrawable:lib:0.4+'
 
 }
