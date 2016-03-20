@@ -23,6 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:id="@+id/rl_boiler"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
@@ -53,7 +54,7 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/ll_burner"
+            android:id="@+id/rl_burner"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -86,7 +87,7 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/ll_menu"
+            android:id="@+id/rl_menu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -119,7 +120,7 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/ll_check"
+            android:id="@+id/rl_check"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
