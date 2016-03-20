@@ -10,14 +10,14 @@ import android.widget.ImageButton;
 
 import com.example.aleksandr.liberator.R;
 import com.example.aleksandr.liberator.adapter.TabAdapter;
-import com.example.aleksandr.liberator.fragments.SplashFragment;
+import com.example.aleksandr.liberator.fragments.start_fragments.SplashFragment;
 import com.example.aleksandr.liberator.static_params.StaticParams;
 import com.example.aleksandr.liberator.utils.Utils;
 
 public class StartActivity extends AppCompatActivity {
 
     private FragmentManager fragmentManager;
-    public static final String TAG_SPLASH_FRAGMENT = "SplashFragment";
+
     private ImageButton ibStartStop, ibSettings;
 
     @Override
@@ -47,11 +47,14 @@ public class StartActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             Utils.disableButton(v);
+            Intent intent;
             switch (v.getId()) {
                 case R.id.ib_fab:
+                    intent = new Intent(StartActivity.this, ProcessActivity.class);
+                    startActivity(intent);
                     break;
                 case R.id.ib_settings:
-                    Intent intent = new Intent(StartActivity.this, SettingsAppActivity.class);
+                    intent = new Intent(StartActivity.this, SettingsAppActivity.class);
                     startActivity(intent);
                     break;
             }
@@ -63,7 +66,7 @@ public class StartActivity extends AppCompatActivity {
             StaticParams.SHOW_SPLASH = false;
             SplashFragment splashFragment = new SplashFragment();
             fragmentManager.beginTransaction()
-                    .replace(R.id.main_container, splashFragment, TAG_SPLASH_FRAGMENT)
+                    .replace(R.id.main_container, splashFragment, StaticParams.TAG_SPLASH_FRAGMENT)
                     .addToBackStack(null)
                     .commit();
         }

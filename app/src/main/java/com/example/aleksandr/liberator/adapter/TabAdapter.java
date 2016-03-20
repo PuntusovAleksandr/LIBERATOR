@@ -4,10 +4,10 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.support.v13.app.FragmentStatePagerAdapter;
 
-import com.example.aleksandr.liberator.fragments.PowerFragment;
-import com.example.aleksandr.liberator.fragments.SetTemperatureWaterFragment;
-import com.example.aleksandr.liberator.fragments.TemperatureAirFragment;
-import com.example.aleksandr.liberator.fragments.TemperatureWaterNowFragment;
+import com.example.aleksandr.liberator.fragments.start_fragments.PowerFragment;
+import com.example.aleksandr.liberator.fragments.start_fragments.SetTemperatureWaterFragment;
+import com.example.aleksandr.liberator.fragments.start_fragments.TemperatureAirFragment;
+import com.example.aleksandr.liberator.fragments.start_fragments.TemperatureWaterNowFragment;
 
 /**
  * Created by Aleksandr on 20.03.2016.

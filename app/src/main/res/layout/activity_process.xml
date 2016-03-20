@@ -1,38 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_container"
+    android:id="@+id/process_coordinator"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".activity.StartActivity">
+    tools:context="com.example.aleksandr.liberator.activity.ProcessActivity">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/pager"
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/background_activ"/>
 
-
-    <include layout="@layout/content_main" />
 
     <ImageButton
-        android:id="@+id/ib_fab"
+        android:id="@+id/ib_stop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         android:background="@color/transparent"
-        android:src="@drawable/start" />
-
-
-    <ImageButton
-        android:id="@+id/ib_settings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:background="@color/transparent"
-        android:src="@drawable/settings" />
-
+        android:src="@drawable/stop" />
 
 </android.support.design.widget.CoordinatorLayout>

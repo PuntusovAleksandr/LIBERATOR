@@ -1,4 +1,4 @@
-package com.example.aleksandr.liberator.fragments;
+package com.example.aleksandr.liberator.fragments.start_fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;

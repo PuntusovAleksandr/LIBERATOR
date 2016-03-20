@@ -1,4 +1,4 @@
-package com.example.aleksandr.liberator.fragments;
+package com.example.aleksandr.liberator.fragments.start_fragments;
 
 
 import android.app.Fragment;
@@ -13,10 +13,11 @@ import com.example.aleksandr.liberator.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TemperatureAirFragment extends ShowParamFragment {
+public class SetTemperatureWaterFragment extends ShowParamFragment {
+
     private Context mContext;
 
-    public TemperatureAirFragment() {
+    public SetTemperatureWaterFragment() {
     }
 
     @Override
@@ -27,18 +28,18 @@ public class TemperatureAirFragment extends ShowParamFragment {
             mContext = getActivity();
         }
 
-        int color = mContext.getResources().getColor(R.color.white);
-        tvTitle.setText("Воздух");
+        // Required empty public constructor
+        int color = mContext.getResources().getColor(R.color.red);
+        tvTitle.setText("Установ. Температура\nкотловой воды");
         tvTitle.setTextColor(color);
 
-        ivIcon.setImageResource(R.drawable.air);
-        tvParams.setText("28");
+        ivIcon.setImageResource(R.drawable.termometr);
+        tvParams.setText("15");
         tvParams.setTextColor(color);
 
-        tvValue.setText("%");
-        tvValue.setTextColor(color);
 
+        tvValue.setText("C");
+        tvValue.setTextColor(color);
         return view;
     }
-
 }

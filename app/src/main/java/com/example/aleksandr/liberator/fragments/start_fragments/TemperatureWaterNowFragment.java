@@ -1,4 +1,4 @@
-package com.example.aleksandr.liberator.fragments;
+package com.example.aleksandr.liberator.fragments.start_fragments;
 
 
 import android.app.Fragment;
@@ -13,12 +13,11 @@ import com.example.aleksandr.liberator.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PowerFragment extends ShowParamFragment {
+public class TemperatureWaterNowFragment extends ShowParamFragment {
 
     private Context mContext;
 
-
-    public PowerFragment() {
+    public TemperatureWaterNowFragment() {
     }
 
     @Override
@@ -29,19 +28,17 @@ public class PowerFragment extends ShowParamFragment {
             mContext = getActivity();
         }
 
-        int color = mContext.getResources().getColor(R.color.green);
-        tvTitle.setText("Мощность");
+        tvTitle.setText("Текущая температура\nкотловой воды");
+        int color = mContext.getResources().getColor(R.color.blue);
         tvTitle.setTextColor(color);
 
-        ivIcon.setImageResource(R.drawable.power);
+        ivIcon.setImageResource(R.drawable.termometr_blue);
         tvParams.setText("25");
         tvParams.setTextColor(color);
 
-
-        tvValue.setText("кВт");
+        tvValue.setText("C");
         tvValue.setTextColor(color);
 
         return view;
     }
-
 }
