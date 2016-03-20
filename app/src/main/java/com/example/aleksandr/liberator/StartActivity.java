@@ -4,6 +4,7 @@ import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ImageButton;
 
 import com.example.aleksandr.liberator.adapter.TabAdapter;
 import com.example.aleksandr.liberator.fragments.SplashFragment;
@@ -13,6 +14,7 @@ public class StartActivity extends AppCompatActivity {
 
     private FragmentManager fragmentManager;
     public static final String TAG_SPLASH_FRAGMENT = "SplashFragment";
+    private ImageButton ibStartStop;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +31,10 @@ public class StartActivity extends AppCompatActivity {
         ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
         TabAdapter adapter = new TabAdapter(fragmentManager);
         viewPager.setAdapter(adapter);
+
+        ibStartStop = (ImageButton) findViewById(R.id.ib_fab);
     }
+
 
     private void runSplash() {
         if (StaticParams.SHOW_SPLASH) {
