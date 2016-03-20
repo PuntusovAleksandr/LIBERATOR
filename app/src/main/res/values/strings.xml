@@ -5,4 +5,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="link_liberator">www.liberator.ua</string>
     <string name="title_activity_main">Main</string>
+    <string name="title_activity_settings_app">SettingsAppActivity</string>
+    <string name="settings_app">Settings</string>
+    <string name="params_boiler">Params boiler</string>
+    <string name="params_burner">Params burner</string>
+    <string name="diagnostics_modules">Diagnostics modules</string>
+    <string name="service_menu">Service menu</string>
 </resources>
