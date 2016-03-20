@@ -2,9 +2,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/black">
+    android:background="@color/black"
+    android:orientation="vertical">
     <!--tools:context=".fragments.TemperatureWaterNowFragment">-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:gravity="center">
 
         <TextView
             android:id="@+id/tv_title_param"
@@ -14,34 +20,45 @@
             android:maxLines="2"
             android:text="water now"
             android:textColor="@color/blue"
-            android:layout_centerVertical="true"
+            android:layout_above="@+id/view_iid"
             android:layout_marginBottom="@dimen/activity_horizontal_margin"/>
+
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:id="@+id/view_iid"
+            android:layout_centerVertical="true"/>
 
         <ImageView
             android:id="@+id/iv_icon"
             android:layout_width="@dimen/size_icon"
             android:layout_height="@dimen/size_icon"
-            android:layout_below="@+id/tv_title_param"
+            android:layout_below="@+id/view_iid"
+            android:src="@drawable/termometr"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
             android:layout_toLeftOf="@+id/tv_temperature"
-            android:layout_toStartOf="@+id/tv_temperature"
-            android:layout_marginRight="@dimen/activity_vertical_margin"/>
+            android:layout_toStartOf="@+id/tv_temperature" />
 
         <TextView
             android:id="@+id/tv_temperature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/view_iid"
             android:layout_centerHorizontal="true"
+            android:gravity="bottom"
             android:textColor="@color/white"
             android:textSize="40sp"
-            android:gravity="bottom"
-            android:layout_below="@+id/tv_title_param"/>
+            android:text="water now"/>
 
         <TextView
+            android:id="@+id/tv_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_value"
-            android:layout_below="@+id/tv_title_param"
-            android:layout_toRightOf="@+id/tv_temperature"
-            android:layout_toEndOf="@+id/tv_temperature" />
-
+            android:layout_below="@+id/view_iid"
+            android:textColor="@color/white"
+            android:text="water now"
+            android:layout_toEndOf="@+id/tv_temperature"
+            android:layout_toRightOf="@+id/tv_temperature" />
+    </RelativeLayout>
 </RelativeLayout>
