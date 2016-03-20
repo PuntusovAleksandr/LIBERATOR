@@ -9,7 +9,7 @@ import android.widget.ImageButton;
 
 import com.example.aleksandr.liberator.R;
 import com.example.aleksandr.liberator.fragments.process_fragments.ProcessFragment;
-import com.example.aleksandr.liberator.fragments.process_fragments.WorkFragment;
+import com.example.aleksandr.liberator.fragments.start_fragments.SetTemperatureWaterFragment;
 import com.example.aleksandr.liberator.static_params.StaticParams;
 import com.example.aleksandr.liberator.utils.Utils;
 
@@ -57,16 +57,21 @@ public class ProcessActivity extends AppCompatActivity {
     }
 
     public void startWorkFragment() {
-        WorkFragment workFragment = (WorkFragment) fragmentManager
-                .findFragmentByTag(StaticParams.TAG_WORKING_FRAGMENT);
-        if (workFragment == null) {
-            workFragment = new WorkFragment();
+        SetTemperatureWaterFragment waterFragment = (SetTemperatureWaterFragment) fragmentManager
+                .findFragmentByTag(StaticParams.TAG_SET_TEMPERATURE_FRAGMENT);
+        if (waterFragment == null) {
+            waterFragment = new SetTemperatureWaterFragment();
             fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.process_coordinator, workFragment,
-                    StaticParams.TAG_WORKING_FRAGMENT);
+            fragmentTransaction.replace(R.id.process_coordinator, waterFragment,
+                    StaticParams.TAG_SET_TEMPERATURE_FRAGMENT);
 //            fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
-
+            setEnableOtherParams();
         }
+    }
+
+    private void setEnableOtherParams() {
+
+
     }
 }

@@ -13,7 +13,7 @@ public class StaticParams {
      */
     public static final String TAG_SPLASH_FRAGMENT = "SplashFragment";
     public static final String TAG_PROCESS_FRAGMENT = "ProcessFragment";
-    public static final String TAG_WORKING_FRAGMENT = "WorkFragment";
+    public static final String TAG_SET_TEMPERATURE_FRAGMENT = "SetTemperatureWaterFragment";
 
 
 }
