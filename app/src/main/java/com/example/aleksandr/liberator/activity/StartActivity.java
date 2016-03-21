@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import com.example.aleksandr.liberator.R;
+import com.example.aleksandr.liberator.fragments.process_fragments.ProcessFragment;
 import com.example.aleksandr.liberator.fragments.start_fragments.PowerFragment;
 import com.example.aleksandr.liberator.fragments.start_fragments.SetTemperatureWaterFragment;
 import com.example.aleksandr.liberator.fragments.start_fragments.SplashFragment;
@@ -22,6 +24,7 @@ public class StartActivity extends AppCompatActivity {
     private FragmentManager fragmentManager;
 
     private ImageButton ibStartStop, ibSettings, ibLeft, ibRight;
+    private ImageView ivFullIcon;
 
     /**
      * this value - for check fragment by nex pressed on button left or right
@@ -46,6 +49,8 @@ public class StartActivity extends AppCompatActivity {
         ibLeft = (ImageButton) findViewById(R.id.ib_left);
         ibRight = (ImageButton) findViewById(R.id.ib_right);
 
+        ivFullIcon = (ImageView) findViewById(R.id.iv_circle_start);
+
         ibStartStop.setOnClickListener(listener);
         ibSettings.setOnClickListener(listener);
         ibLeft.setOnClickListener(listener);
@@ -58,21 +63,32 @@ public class StartActivity extends AppCompatActivity {
             Utils.disableButton(v);
             Intent intent;
             switch (v.getId()) {
+                // press left
                 case R.id.ib_left:
                     if (showStartFragment == StaticParams.MIN_START_FRAGMENT) {
                         showStartFragment = StaticParams.MAX_START_FRAGMENT;
                     }else showStartFragment--;
                     showNextFragment(showStartFragment);
                     break;
+                //press right
                 case R.id.ib_right:
                     if (showStartFragment == StaticParams.MAX_START_FRAGMENT) {
                         showStartFragment = StaticParams.MIN_START_FRAGMENT;
                     }else showStartFragment++;
                     showNextFragment(showStartFragment);
                     break;
+                // press button start
                 case R.id.ib_start_stop:
                     // TODO: 22.03.2016 click button
+                    String tag = StaticParams.TAG_PROCESS_FRAGMENT;
+                    ProcessFragment fragment =
+                            (ProcessFragment) getFragmentManager().findFragmentByTag(tag);
+                    if (fragment == null) {
+                        fragment = new ProcessFragment();
+                    }
+                    setFragment(fragment, tag);
                     break;
+                // press settings
                 case R.id.ib_settings:
                     intent = new Intent(StartActivity.this, SettingsAppActivity.class);
                     startActivity(intent);
@@ -148,5 +164,13 @@ public class StartActivity extends AppCompatActivity {
         setFragment(temperatureWaterNowFragment, StaticParams.TAG_TEMPERATURE_NOW_FRAGMENT);
     }
 
+
+    public void startWorkFragment() {
+//        SetTem`
+    }
+
+    public void setIvFullIconFromFragments(int res) {
+        ivFullIcon.setImageResource(res);
+    }
 
 }
