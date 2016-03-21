@@ -5,6 +5,8 @@ package com.example.aleksandr.liberator.static_params;
  */
 public class StaticParams {
 
+
+
     public static long TIME_START = 3;    // in sec
     public static boolean SHOW_SPLASH = true;
 
@@ -13,7 +15,23 @@ public class StaticParams {
      */
     public static final String TAG_SPLASH_FRAGMENT = "SplashFragment";
     public static final String TAG_PROCESS_FRAGMENT = "ProcessFragment";
-    public static final String TAG_SET_TEMPERATURE_FRAGMENT = "SetTemperatureWaterFragment";
+    public static final String TAG_TEMPERATURE_NOW_FRAGMENT = "TemperatureWaterNowFragment";
+    public static final String TAG_POWER_FRAGMENT = "PowerFragment";
+    public static final String TAG_WATER_FRAGMENT = "SetTemperatureWaterFragment";
+    public static final String TAG_AIR_FRAGMENT = "TemperatureAirFragment";
+
+
+    /**
+     * for show next fragment
+     */
+    public static final int MAX_START_FRAGMENT = 4;
+    public static final int MIN_START_FRAGMENT = 1;
+
+    public static final int SHOW_TEMPERATURE_NOW = 1;
+    public static final int SHOW_POWER = 2;
+    public static final int SHOW_TEMPERATURE_WATER = 3;
+    public static final int SHOW_TEMPERATURE_AIR = 4;
+
 
 
 }

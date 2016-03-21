@@ -30,7 +30,7 @@
         android:layout_width="@dimen/size_icon_process"
         android:layout_height="@dimen/size_icon_process"
         android:layout_below="@+id/view_process"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/blow" />
+        android:layout_centerHorizontal="true"/>
+        <!--android:src="@drawable/blow" />-->
 
 </RelativeLayout>

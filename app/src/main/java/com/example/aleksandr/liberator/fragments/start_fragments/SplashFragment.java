@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.aleksandr.liberator.R;
+import com.example.aleksandr.liberator.activity.StartActivity;
 import com.example.aleksandr.liberator.static_params.StaticParams;
 
 import java.util.concurrent.TimeUnit;
@@ -54,4 +55,12 @@ public class SplashFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onDestroyView() {
+        StartActivity activity = (StartActivity) getActivity();
+        if (activity != null) {
+            activity.setStartFragment();
+        }
+        super.onDestroyView();
+    }
 }
