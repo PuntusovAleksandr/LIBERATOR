@@ -15,4 +15,8 @@
     <string name="loading">Загрузка</string>
     <string name="fairing">Розжиг</string>
     <string name="stabil_burn">Стабилизация факела</string>
+    <string name="quality">Quality</string>
+    <string name="fuel">Fuel</string>
+    <string name="air">Air</string>
+    <string name="after_burning">Afterburning</string>
 </resources>

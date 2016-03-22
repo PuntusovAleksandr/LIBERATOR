@@ -19,11 +19,13 @@ public class StaticParams {
     public static final String TAG_POWER_FRAGMENT = "PowerFragment";
     public static final String TAG_WATER_FRAGMENT = "SetTemperatureWaterFragment";
     public static final String TAG_AIR_FRAGMENT = "TemperatureAirFragment";
+    public static final String TAG_END_PROCESS_FRAGMENT = "EndProcess";
 
 
     /**
      * for show next fragment
      */
+    public static final String SHOW_FRAGMENT = "fragment";
     public static final int MAX_START_FRAGMENT = 4;
     public static final int MIN_START_FRAGMENT = 1;
 

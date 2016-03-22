@@ -8,8 +8,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.example.aleksandr.liberator.R;
+import com.example.aleksandr.liberator.fragments.process_fragments.EndProcess;
 import com.example.aleksandr.liberator.fragments.process_fragments.ProcessFragment;
 import com.example.aleksandr.liberator.fragments.start_fragments.PowerFragment;
 import com.example.aleksandr.liberator.fragments.start_fragments.SetTemperatureWaterFragment;
@@ -24,12 +26,17 @@ public class StartActivity extends AppCompatActivity {
     private FragmentManager fragmentManager;
 
     private ImageButton ibStartStop, ibSettings, ibLeft, ibRight;
-    private ImageView ivFullIcon;
+    private ImageView ivFullIcon, imageViewPress;
+    private RelativeLayout rlLeftParams, rlAir, rlProgress;
 
     /**
      * flag for check pressed button "Start" / "Stop"
      */
     private boolean pressedButtonStart;
+    /**
+     * flag for check end process
+     */
+    private boolean enableProcessEnd;
 
     /**
      * this value - for check fragment by nex pressed on button left or right
@@ -58,14 +65,25 @@ public class StartActivity extends AppCompatActivity {
         ibRight = (ImageButton) findViewById(R.id.ib_right);
 
         ivFullIcon = (ImageView) findViewById(R.id.iv_circle_start);
+        imageViewPress = (ImageView) findViewById(R.id.iv_circle_start_press);
+
+        rlLeftParams = (RelativeLayout) findViewById(R.id.rl_left_params);
+        rlAir = (RelativeLayout) findViewById(R.id.rl_air_params);
+        rlProgress = (RelativeLayout) findViewById(R.id.rl_progress_bar);
 
         ibStartStop.setOnClickListener(listener);
         ibSettings.setOnClickListener(listener);
         ibLeft.setOnClickListener(listener);
         ibRight.setOnClickListener(listener);
 
+        imageViewPress.setOnClickListener(listener);
+
         pressedButtonStart = false;
+        enableProcessEnd = false;
+
+        setInvisibleAllParams();
     }
+
 
     View.OnClickListener listener = new View.OnClickListener() {
         @Override
@@ -89,9 +107,10 @@ public class StartActivity extends AppCompatActivity {
                     break;
                 // press button start
                 case R.id.ib_start_stop:
-                    // TODO: 22.03.2016 click button
-                    if (pressedButtonStart) {
+                    if (pressedButtonStart && !enableProcessEnd) {
                         pressButtonStop();
+                    } else if (pressedButtonStart && enableProcessEnd) {
+                        startEndProcess();
                     } else {
                         pressButtonStart();
                     }
@@ -101,9 +120,16 @@ public class StartActivity extends AppCompatActivity {
                     intent = new Intent(StartActivity.this, SettingsAppActivity.class);
                     startActivity(intent);
                     break;
+             // press inner icon
+                case R.id.iv_circle_start_press:
+                    intent = new Intent(StartActivity.this, SetLocalParamActivity.class);
+                    intent.putExtra(StaticParams.SHOW_FRAGMENT, showStartFragment);
+                    startActivity(intent);
+                    break;
             }
         }
     };
+
 
     /**
      * when pressed button "Stop"
@@ -111,6 +137,7 @@ public class StartActivity extends AppCompatActivity {
     public void pressButtonStop() {
         setStartFragment();
         enableButtonLeftRight();
+        setInvisibleAllParams();
     }
 
     /**
@@ -126,6 +153,7 @@ public class StartActivity extends AppCompatActivity {
         setFragment(fragment, tag);
 
         disableButtonLeftRight();
+        imageViewPress.setEnabled(false);
     }
 
 
@@ -197,6 +225,7 @@ public class StartActivity extends AppCompatActivity {
      * By first start call this method
      */
     private void runSplash() {
+        pressedButtonStart = false;
         if (StaticParams.SHOW_SPLASH) {
             StaticParams.SHOW_SPLASH = false;
             SplashFragment splashFragment = new SplashFragment();
@@ -215,6 +244,7 @@ public class StartActivity extends AppCompatActivity {
             temperatureWaterNowFragment = new TemperatureWaterNowFragment();
         }
         setFragment(temperatureWaterNowFragment, StaticParams.TAG_TEMPERATURE_NOW_FRAGMENT);
+
     }
 
     public void setIvFullIconFromFragments(int res) {
@@ -222,12 +252,45 @@ public class StartActivity extends AppCompatActivity {
     }
 
     public void showFullParams() {
-        enableFullParams();
+        setVisibleAllParams();
         setStartFragment();
+        enableProcessEnd = true;
+        ibStartStop.setVisibility(View.VISIBLE);
+        imageViewPress.setEnabled(true);
     }
 
-    private void enableFullParams() {
-        // TODO: 22.03.2016 icons
+    private void setVisibleAllParams() {
+        rlLeftParams.setVisibility(View.VISIBLE);
+        rlAir.setVisibility(View.VISIBLE);
+        rlProgress.setVisibility(View.VISIBLE);
+    }
 
+    private void setInvisibleAllParams() {
+        rlLeftParams.setVisibility(View.INVISIBLE);
+        rlAir.setVisibility(View.INVISIBLE);
+        rlProgress.setVisibility(View.INVISIBLE);
+    }
+
+
+    private void startEndProcess() {
+        String tag = StaticParams.TAG_END_PROCESS_FRAGMENT;
+        EndProcess fragment =
+                (EndProcess) getFragmentManager().findFragmentByTag(tag);
+        if (fragment == null) {
+            fragment = new EndProcess();
+        }
+        setFragment(fragment, tag);
+
+        disableButtonLeftRight();
+        setInvisibleAllParams();
+        ibStartStop.setVisibility(View.INVISIBLE);
+        imageViewPress.setEnabled(false);
+    }
+
+    public void setStartFragmentAfterEndProcess() {
+        setStartFragment();
+        enableButtonLeftRight();
+        ibStartStop.setVisibility(View.VISIBLE);
+        imageViewPress.setEnabled(true);
     }
 }
