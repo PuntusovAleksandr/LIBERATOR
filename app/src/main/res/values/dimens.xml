@@ -7,4 +7,5 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="size_icon_process">64dp</dimen>
     <dimen name="text_title_fragment">24sp</dimen>
+    <dimen name="icon_size_64dp">64dp</dimen>
 </resources>
