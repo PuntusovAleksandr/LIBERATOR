@@ -65,7 +65,11 @@ public class ProcessFragment extends Fragment {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                setLoad();
+                StartActivity activity = (StartActivity) getActivity();
+                if (activity != null) {
+                    activity.setIvFullIconFromFragments(R.drawable.full_loading_circle);
+                    setLoad();
+                }
             }
         }, 1500);
     }
@@ -82,7 +86,7 @@ public class ProcessFragment extends Fragment {
             public void run() {
                 StartActivity activity = (StartActivity) getActivity();
                 if (activity != null) {
-                    activity.setIvFullIconFromFragments(R.drawable.full_loading_circle);
+                    activity.setIvFullIconFromFragments(R.drawable.full_fairing_circle);
                     setFair();
                 }
             }
@@ -101,7 +105,7 @@ public class ProcessFragment extends Fragment {
             public void run() {
                 StartActivity activity = (StartActivity) getActivity();
                 if (activity != null) {
-                    activity.setIvFullIconFromFragments(R.drawable.full_fairing_circle);
+                    activity.setIvFullIconFromFragments(R.drawable.full_burn_circle);
                     setBurn();
                 }
             }
@@ -118,11 +122,7 @@ public class ProcessFragment extends Fragment {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                StartActivity activity = (StartActivity) getActivity();
-                if (activity != null) {
-                    activity.setIvFullIconFromFragments(R.drawable.full_burn_circle);
-                    getNextFragment();
-                }
+                getNextFragment();
             }
         }, 1500);
     }
@@ -131,8 +131,9 @@ public class ProcessFragment extends Fragment {
     public void getNextFragment() {
         StartActivity activity = (StartActivity) getActivity();
         if (activity != null) {
-            activity.startWorkFragment();
+            activity.showFullParams();
             getActivity().getFragmentManager().popBackStack();
+
         }
     }
 }

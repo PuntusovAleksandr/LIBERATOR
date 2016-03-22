@@ -27,6 +27,11 @@ public class StartActivity extends AppCompatActivity {
     private ImageView ivFullIcon;
 
     /**
+     * flag for check pressed button "Start" / "Stop"
+     */
+    private boolean pressedButtonStart;
+
+    /**
      * this value - for check fragment by nex pressed on button left or right
      */
     private int showStartFragment = StaticParams.MIN_START_FRAGMENT;
@@ -42,6 +47,9 @@ public class StartActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * create and init all view
+     */
     private void setUi() {
 
         ibStartStop = (ImageButton) findViewById(R.id.ib_start_stop);
@@ -55,6 +63,8 @@ public class StartActivity extends AppCompatActivity {
         ibSettings.setOnClickListener(listener);
         ibLeft.setOnClickListener(listener);
         ibRight.setOnClickListener(listener);
+
+        pressedButtonStart = false;
     }
 
     View.OnClickListener listener = new View.OnClickListener() {
@@ -67,26 +77,24 @@ public class StartActivity extends AppCompatActivity {
                 case R.id.ib_left:
                     if (showStartFragment == StaticParams.MIN_START_FRAGMENT) {
                         showStartFragment = StaticParams.MAX_START_FRAGMENT;
-                    }else showStartFragment--;
+                    } else showStartFragment--;
                     showNextFragment(showStartFragment);
                     break;
                 //press right
                 case R.id.ib_right:
                     if (showStartFragment == StaticParams.MAX_START_FRAGMENT) {
                         showStartFragment = StaticParams.MIN_START_FRAGMENT;
-                    }else showStartFragment++;
+                    } else showStartFragment++;
                     showNextFragment(showStartFragment);
                     break;
                 // press button start
                 case R.id.ib_start_stop:
                     // TODO: 22.03.2016 click button
-                    String tag = StaticParams.TAG_PROCESS_FRAGMENT;
-                    ProcessFragment fragment =
-                            (ProcessFragment) getFragmentManager().findFragmentByTag(tag);
-                    if (fragment == null) {
-                        fragment = new ProcessFragment();
+                    if (pressedButtonStart) {
+                        pressButtonStop();
+                    } else {
+                        pressButtonStart();
                     }
-                    setFragment(fragment, tag);
                     break;
                 // press settings
                 case R.id.ib_settings:
@@ -96,6 +104,49 @@ public class StartActivity extends AppCompatActivity {
             }
         }
     };
+
+    /**
+     * when pressed button "Stop"
+     */
+    public void pressButtonStop() {
+        setStartFragment();
+        enableButtonLeftRight();
+    }
+
+    /**
+     * when pressed button "Start"
+     */
+    private void pressButtonStart() {
+        String tag = StaticParams.TAG_PROCESS_FRAGMENT;
+        ProcessFragment fragment =
+                (ProcessFragment) getFragmentManager().findFragmentByTag(tag);
+        if (fragment == null) {
+            fragment = new ProcessFragment();
+        }
+        setFragment(fragment, tag);
+
+        disableButtonLeftRight();
+    }
+
+
+    private void disableButtonLeftRight() {
+        ibRight.setVisibility(View.INVISIBLE);
+        ibLeft.setVisibility(View.INVISIBLE);
+        ibSettings.setVisibility(View.INVISIBLE);
+        pressedButtonStart = true;
+        ibStartStop.setImageResource(R.drawable.stop);
+    }
+
+
+    private void enableButtonLeftRight() {
+        ibRight.setVisibility(View.VISIBLE);
+        ibLeft.setVisibility(View.VISIBLE);
+        ibSettings.setVisibility(View.VISIBLE);
+        pressedButtonStart = false;
+        ibStartStop.setImageResource(R.drawable.start);
+        ivFullIcon.setImageResource(R.drawable.full_start_circle_min);
+    }
+
 
     private void showNextFragment(int showStartFragment) {
         String tag;
@@ -142,7 +193,9 @@ public class StartActivity extends AppCompatActivity {
                 .commit();
     }
 
-
+    /**
+     * By first start call this method
+     */
     private void runSplash() {
         if (StaticParams.SHOW_SPLASH) {
             StaticParams.SHOW_SPLASH = false;
@@ -151,7 +204,7 @@ public class StartActivity extends AppCompatActivity {
                     .replace(R.id.main_container, splashFragment, StaticParams.TAG_SPLASH_FRAGMENT)
                     .addToBackStack(null)
                     .commit();
-        }else setStartFragment();
+        } else setStartFragment();
     }
 
     public void setStartFragment() {
@@ -164,13 +217,17 @@ public class StartActivity extends AppCompatActivity {
         setFragment(temperatureWaterNowFragment, StaticParams.TAG_TEMPERATURE_NOW_FRAGMENT);
     }
 
-
-    public void startWorkFragment() {
-//        SetTem`
-    }
-
     public void setIvFullIconFromFragments(int res) {
         ivFullIcon.setImageResource(res);
     }
 
+    public void showFullParams() {
+        enableFullParams();
+        setStartFragment();
+    }
+
+    private void enableFullParams() {
+        // TODO: 22.03.2016 icons
+
+    }
 }
