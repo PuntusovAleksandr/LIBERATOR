@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
+    android:theme="@style/AppTheme.AppBarOverlay"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".activity.StartActivity"
     tools:showIn="@layout/activity_start">
@@ -87,8 +88,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
-            android:layout_margin="@dimen/icon_size_64dp"
-            android:layout_centerVertical="true" />
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/icon_size_64dp" />
 
         <ImageButton
             android:id="@+id/ib_right"
@@ -134,13 +135,13 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:layout_marginBottom="@dimen/size_icon">
+        android:layout_marginBottom="@dimen/size_icon"
+        android:layout_weight="1">
 
         <RelativeLayout
+            android:id="@+id/rl_air_params"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/rl_air_params"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
@@ -171,8 +172,8 @@
             android:id="@+id/ib_start_stop"
             android:layout_width="@dimen/size_icon"
             android:layout_height="@dimen/size_icon"
-            android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
             android:layout_marginBottom="@dimen/activity_horizontal_margin"
             android:layout_marginEnd="@dimen/activity_horizontal_margin"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
@@ -180,9 +181,9 @@
             android:src="@drawable/start" />
 
         <RelativeLayout
+            android:id="@+id/rl_progress_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/rl_progress_bar"
             android:layout_centerVertical="true">
 
             <TextView
