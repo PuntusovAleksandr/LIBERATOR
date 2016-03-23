@@ -15,36 +15,37 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/iv_button_back_settings"
         android:layout_centerVertical="true"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
         <RelativeLayout
+            android:id="@+id/rl_boiler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/rl_boiler"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/iv_boiler"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/icon_settings_size"
+                android:layout_height="@dimen/icon_settings_size"
+                android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_marginBottom="@dimen/activity_vertical_margin"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:gravity="center_horizontal"/>
-                <!--android:src="@drawable/boiler" />-->
+                android:gravity="center_horizontal"
+                android:src="@drawable/boiler" />
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_boiler"
                 android:layout_centerVertical="true"
-                android:layout_toEndOf="@+id/iv_boiler"
-                android:layout_toRightOf="@+id/iv_boiler"
                 android:gravity="center_horizontal"
                 android:text="@string/params_boiler"
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -63,21 +64,21 @@
 
             <ImageView
                 android:id="@+id/iv_burner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/icon_settings_size"
+                android:layout_height="@dimen/icon_settings_size"
+                android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_marginBottom="@dimen/activity_vertical_margin"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:gravity="center_horizontal"/>
-                <!--android:src="@drawable/burner" />-->
+                android:gravity="center_horizontal"
+                android:src="@drawable/burner" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_burner"
                 android:layout_centerVertical="true"
-                android:layout_toEndOf="@+id/iv_burner"
-                android:layout_toRightOf="@+id/iv_burner"
                 android:gravity="center_horizontal"
                 android:text="@string/params_burner"
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -96,21 +97,21 @@
 
             <ImageView
                 android:id="@+id/iv_menu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/icon_settings_size"
+                android:layout_height="@dimen/icon_settings_size"
+                android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_marginBottom="@dimen/activity_vertical_margin"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:gravity="center_horizontal"/>
-                <!--android:src="@drawable/menu" />-->
+                android:gravity="center_horizontal"
+                android:src="@drawable/menu" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_menu"
                 android:layout_centerVertical="true"
-                android:layout_toEndOf="@+id/iv_menu"
-                android:layout_toRightOf="@+id/iv_menu"
                 android:gravity="center_horizontal"
                 android:text="@string/service_menu"
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -129,21 +130,21 @@
 
             <ImageView
                 android:id="@+id/iv_check"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/icon_settings_size"
+                android:layout_height="@dimen/icon_settings_size"
+                android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_marginBottom="@dimen/activity_vertical_margin"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:gravity="center_horizontal"/>
-                <!--android:src="@drawable/check" />-->
+                android:gravity="center_horizontal"
+                android:src="@drawable/check" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_check"
                 android:layout_centerVertical="true"
-                android:layout_toEndOf="@+id/iv_check"
-                android:layout_toRightOf="@+id/iv_check"
                 android:gravity="center_horizontal"
                 android:text="@string/diagnostics_modules"
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -153,4 +154,14 @@
 
         </RelativeLayout>
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_button_back_settings"
+        android:layout_width="@dimen/size_icon"
+        android:layout_height="@dimen/size_icon"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/size_icon"
+        android:src="@drawable/button_back" />
+
 </RelativeLayout>

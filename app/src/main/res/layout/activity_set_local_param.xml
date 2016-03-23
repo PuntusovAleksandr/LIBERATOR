@@ -25,9 +25,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="@dimen/size_icon"
-            android:src="@drawable/button_back">
-
-        </ImageView>
+            android:src="@drawable/button_back"/>
 
     </RelativeLayout>
 
