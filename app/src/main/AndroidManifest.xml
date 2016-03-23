@@ -27,8 +27,25 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.aleksandr.liberator.activity.StartActivity" />
         </activity>
-        <activity android:name=".activity.SetLocalParamActivity"
-            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".activity.SetLocalParamActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activity.DiagnosticActivity"
+            android:label="@string/title_activity_diagnostic"
+            android:parentActivityName=".activity.SettingsAppActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.aleksandr.liberator.activity.SettingsAppActivity" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -1,9 +1,11 @@
 package com.example.aleksandr.liberator.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.example.aleksandr.liberator.R;
@@ -12,6 +14,7 @@ import com.example.aleksandr.liberator.utils.Utils;
 public class SettingsAppActivity extends AppCompatActivity {
 
     private RelativeLayout rlBoouler, rlBurner, rlService, rlDiagnostic;
+    private ImageView btBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +30,13 @@ public class SettingsAppActivity extends AppCompatActivity {
         rlService = (RelativeLayout) findViewById(R.id.rl_menu);
         rlDiagnostic = (RelativeLayout) findViewById(R.id.rl_check);
 
+        btBack = (ImageView) findViewById(R.id.iv_button_back_settings);
+
         rlBoouler.setOnClickListener(listener);
         rlBurner.setOnClickListener(listener);
         rlService.setOnClickListener(listener);
         rlDiagnostic.setOnClickListener(listener);
+        btBack.setOnClickListener(listener);
     }
 
     View.OnClickListener listener = new View.OnClickListener() {
@@ -45,6 +51,12 @@ public class SettingsAppActivity extends AppCompatActivity {
                 case R.id.rl_menu:
                     break;
                 case R.id.rl_check:
+                    Intent intent = new Intent(SettingsAppActivity.this, DiagnosticActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.iv_button_back_settings:
+                    onBackPressed();
+                    finish();
                     break;
 
             }
@@ -55,7 +67,6 @@ public class SettingsAppActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.settings_app);
-
 
         /**
          * for back pressed
