@@ -259,10 +259,17 @@ public class StartActivity extends AppCompatActivity {
         imageViewPress.setEnabled(true);
     }
 
+    /**
+     * show all icons:
+     * btLeft, btRight, btSettings, leftPanel, paramAir and progressFuel
+     */
     private void setVisibleAllParams() {
         rlLeftParams.setVisibility(View.VISIBLE);
         rlAir.setVisibility(View.VISIBLE);
         rlProgress.setVisibility(View.VISIBLE);
+        ibRight.setVisibility(View.VISIBLE);
+        ibLeft.setVisibility(View.VISIBLE);
+        ibSettings.setVisibility(View.VISIBLE);
     }
 
     private void setInvisibleAllParams() {
