@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.example.aleksandr.liberator.R;
+import com.example.aleksandr.liberator.static_params.StaticParams;
 import com.example.aleksandr.liberator.utils.Utils;
 
 public class SettingsAppActivity extends AppCompatActivity {
@@ -45,10 +46,13 @@ public class SettingsAppActivity extends AppCompatActivity {
             Utils.disableButton(v);
             switch (v.getId()) {
                 case R.id.rl_boiler:
+                    goToSetParams(R.string.params_boiler, R.color.blue);
                     break;
                 case R.id.rl_burner:
+                    goToSetParams(R.string.params_burner, R.color.color_splash);
                     break;
                 case R.id.rl_menu:
+                    goToSetParams(R.string.service, R.color.red);
                     break;
                 case R.id.rl_check:
                     Intent intent = new Intent(SettingsAppActivity.this, DiagnosticActivity.class);
@@ -62,6 +66,13 @@ public class SettingsAppActivity extends AppCompatActivity {
             }
         }
     };
+
+    private void goToSetParams(int title, int color) {
+        Intent intent = new Intent(SettingsAppActivity.this, SettingsSetParamsActivity.class);
+        intent.putExtra(StaticParams.KEY_TITLE, title);
+        intent.putExtra(StaticParams.KEY_COLOR, color);
+        startActivity(intent);
+    }
 
     private void setToolBar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

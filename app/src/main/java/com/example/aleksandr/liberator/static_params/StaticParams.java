@@ -35,5 +35,10 @@ public class StaticParams {
     public static final int SHOW_TEMPERATURE_AIR = 4;
 
 
+    /**
+     * for Extra in Activity
+     */
+    public static final String KEY_TITLE = "key_title";
+    public static final String KEY_COLOR = "key_color";
 
 }

@@ -4,6 +4,8 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
@@ -42,6 +44,11 @@ public class StartActivity extends AppCompatActivity {
      * this value - for check fragment by nex pressed on button left or right
      */
     private int showStartFragment = StaticParams.MIN_START_FRAGMENT;
+
+    /**
+     * for double closed
+     */
+    private boolean doubleBackToExitPressedOnce = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,6 +145,8 @@ public class StartActivity extends AppCompatActivity {
         setStartFragment();
         enableButtonLeftRight();
         setInvisibleAllParams();
+
+        imageViewPress.setEnabled(true);
     }
 
     /**
@@ -299,5 +308,26 @@ public class StartActivity extends AppCompatActivity {
         enableButtonLeftRight();
         ibStartStop.setVisibility(View.VISIBLE);
         imageViewPress.setEnabled(true);
+    }
+
+
+    @Override
+    public void onBackPressed() {
+
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+
+            this.doubleBackToExitPressedOnce = true;
+            Snackbar.make(ibLeft, R.string.double_click_to_exit, Snackbar.LENGTH_SHORT).show();
+
+            new Handler().postDelayed(new Runnable() {
+
+                @Override
+                public void run() {
+                    doubleBackToExitPressedOnce = false;
+                }
+            }, 2000);
     }
 }

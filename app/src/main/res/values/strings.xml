@@ -27,4 +27,8 @@
     <string name="fan">Fan</string>
     <string name="burner_auger">Burner auger</string>
     <string name="hopper_auger">Hopper auger</string>
+    <string name="title_activity_settings_set_params">Set Params</string>
+
+    <string name="double_click_to_exit">Please click &lt;BACK again to exit</string>
+    <string name="service">Service</string>
 </resources>

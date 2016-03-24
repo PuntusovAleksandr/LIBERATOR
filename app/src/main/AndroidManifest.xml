@@ -39,7 +39,16 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.aleksandr.liberator.activity.SettingsAppActivity" />
-
+        </activity>
+        <activity
+            android:name=".activity.SettingsSetParamsActivity"
+            android:label="@string/title_activity_settings_set_params"
+            android:parentActivityName=".activity.SettingsAppActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.aleksandr.liberator.activity.SettingsAppActivity" />
         </activity>
     </application>
 

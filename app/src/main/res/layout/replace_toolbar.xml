@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar_set_params"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_category_settings"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/settings_app"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_24" />
+
+    <TextView
+        android:id="@+id/tv_settings_category"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:background="@color/color_splash"
+        android:gravity="center"
+        android:text="@string/settings_app"
+        android:textSize="@dimen/font_size_24" />
+</LinearLayout>

@@ -1,11 +1,12 @@
 package com.example.aleksandr.liberator.activity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.example.aleksandr.liberator.R;
 import com.example.aleksandr.liberator.utils.Utils;
@@ -73,13 +74,20 @@ public class DiagnosticActivity extends AppCompatActivity {
     };
 
     private void setToolBar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_diagnostic);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(R.string.diagnostic);
-        /**
-         * for back pressed
-         */
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        TextView textCategory = (TextView) findViewById(R.id.tv_settings_category);
+        textCategory.setText(R.string.diagnostic);
+        textCategory.setTextColor(Color.WHITE);
+        textCategory.setBackgroundColor(Color.BLUE);
+
+        TextView textSettings = (TextView) findViewById(R.id.tv_category_settings);
+        textSettings.setTextColor(Color.WHITE);
+        textSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+                finish();
+            }
+        });
     }
 
 }
