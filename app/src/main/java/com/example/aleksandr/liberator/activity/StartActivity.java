@@ -266,6 +266,7 @@ public class StartActivity extends AppCompatActivity {
         enableProcessEnd = true;
         ibStartStop.setVisibility(View.VISIBLE);
         imageViewPress.setEnabled(true);
+        showStartFragment = StaticParams.MIN_START_FRAGMENT;
     }
 
     /**
@@ -279,6 +280,7 @@ public class StartActivity extends AppCompatActivity {
         ibRight.setVisibility(View.VISIBLE);
         ibLeft.setVisibility(View.VISIBLE);
         ibSettings.setVisibility(View.VISIBLE);
+        showStartFragment = StaticParams.MIN_START_FRAGMENT;
     }
 
     private void setInvisibleAllParams() {
@@ -308,6 +310,7 @@ public class StartActivity extends AppCompatActivity {
         enableButtonLeftRight();
         ibStartStop.setVisibility(View.VISIBLE);
         imageViewPress.setEnabled(true);
+        showStartFragment = StaticParams.MIN_START_FRAGMENT;
     }
 
 
@@ -316,6 +319,8 @@ public class StartActivity extends AppCompatActivity {
 
         if (doubleBackToExitPressedOnce) {
             super.onBackPressed();
+            finish();
+            System.exit(0);
             return;
         }
 

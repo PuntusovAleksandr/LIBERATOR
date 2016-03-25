@@ -30,7 +30,7 @@ public class SetTemperatureWaterFragment extends ShowParamFragment {
 
         // Required empty public constructor
         int color = mContext.getResources().getColor(R.color.red);
-        tvTitle.setText("Установ. Температура\nкотловой воды");
+        tvTitle.setText(R.string.set_temperature);
         tvTitle.setTextColor(color);
 
         ivIcon.setImageResource(R.drawable.termometr);

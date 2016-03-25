@@ -89,7 +89,8 @@
             android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:layout_margin="@dimen/icon_size_64dp" />
+            android:layout_margin="@dimen/icon_size_64dp"
+            android:padding="@dimen/icon_size_64dp"/>
 
         <ImageButton
             android:id="@+id/ib_right"

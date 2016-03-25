@@ -28,7 +28,7 @@ public class TemperatureAirFragment extends ShowParamFragment {
         }
 
         int color = mContext.getResources().getColor(R.color.white);
-        tvTitle.setText("Воздух");
+        tvTitle.setText(R.string.air_);
         tvTitle.setTextColor(color);
 
         ivIcon.setImageResource(R.drawable.air);

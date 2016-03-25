@@ -30,7 +30,7 @@ public class PowerFragment extends ShowParamFragment {
         }
 
         int color = mContext.getResources().getColor(R.color.green);
-        tvTitle.setText("Мощность");
+        tvTitle.setText(R.string.power);
         tvTitle.setTextColor(color);
 
         ivIcon.setImageResource(R.drawable.power);

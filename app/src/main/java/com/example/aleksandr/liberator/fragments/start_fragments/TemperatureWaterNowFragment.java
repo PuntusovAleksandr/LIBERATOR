@@ -28,7 +28,7 @@ public class TemperatureWaterNowFragment extends ShowParamFragment {
             mContext = getActivity();
         }
 
-        tvTitle.setText("Текущая температура\nкотловой воды");
+        tvTitle.setText(R.string.temperature_now);
         int color = mContext.getResources().getColor(R.color.blue);
         tvTitle.setTextColor(color);
 

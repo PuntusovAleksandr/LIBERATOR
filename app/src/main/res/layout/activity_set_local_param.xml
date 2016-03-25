@@ -54,7 +54,7 @@
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/view_local"
             android:gravity="center"
-            android:text="25"
+            android:text="0"
             android:textColor="@color/white"
             android:textSize="@dimen/font_size_splash" />
 
@@ -86,7 +86,7 @@
 
 
         <ImageButton
-            android:id="@+id/ib_right"
+            android:id="@+id/ib_plus"
             android:layout_width="@dimen/icon_size_64dp"
             android:layout_height="@dimen/icon_size_64dp"
             android:layout_alignParentEnd="true"
@@ -96,7 +96,7 @@
             android:src="@drawable/pluse" />
 
         <ImageButton
-            android:id="@+id/ib_left"
+            android:id="@+id/ib_minus"
             android:layout_width="@dimen/icon_size_64dp"
             android:layout_height="@dimen/icon_size_64dp"
             android:layout_alignParentLeft="true"
@@ -106,7 +106,7 @@
             android:src="@drawable/minus" />
 
         <ImageButton
-            android:id="@+id/ib_settings"
+            android:id="@+id/ib_ok"
             android:layout_width="@dimen/icon_size_64dp"
             android:layout_height="@dimen/icon_size_64dp"
             android:layout_alignParentBottom="true"

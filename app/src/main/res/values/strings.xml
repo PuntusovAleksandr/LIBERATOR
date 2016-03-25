@@ -20,7 +20,7 @@
     <string name="air">Air</string>
     <string name="after_burning">Afterburning</string>
     <string name="title_activity_diagnostic">DiagnosticActivity</string>
-    <string name="diagnostic">\"Diagnostic\"</string>
+    <string name="diagnostic">Diagnostic</string>
     <string name="heating_element">Heating element</string>
     <string name="additional_relay">Additional relay</string>
     <string name="burner_cleaning">Burner cleaning (scraper)</string>
@@ -31,4 +31,10 @@
 
     <string name="double_click_to_exit">Please click &lt;BACK again to exit</string>
     <string name="service">Service</string>
+    <string name="temperature_now">Текущая температура\nкотловой воды</string>
+    <string name="power">Мощность</string>
+    <string name="set_temperature">Установ. Температура\nкотловой воды</string>
+    <string name="air_">Воздух</string>
+    <string name="celsij">C</string>
+    <string name="power_value">kWt</string>
 </resources>
