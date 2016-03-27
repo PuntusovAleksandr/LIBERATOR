@@ -6,7 +6,6 @@ package com.example.aleksandr.liberator.static_params;
 public class StaticParams {
 
 
-
     public static long TIME_START = 3;    // in sec
     public static boolean SHOW_SPLASH = true;
 
@@ -41,4 +40,10 @@ public class StaticParams {
     public static final String KEY_TITLE = "key_title";
     public static final String KEY_COLOR = "key_color";
 
+    /**
+     * for name data base
+     */
+    public static final String DEFAULT_NAME_DB = "Liberator" ;
+
+    public static final int VERSION_DB = 1;
 }

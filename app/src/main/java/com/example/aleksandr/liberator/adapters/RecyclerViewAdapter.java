@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.aleksandr.liberator.R;
-import com.example.aleksandr.liberator.entity.Parametr;
+import com.example.aleksandr.liberator.data_base.entity.EntitySettings;
 
 import java.util.List;
 
@@ -19,10 +19,10 @@ import java.util.List;
  */
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ItemViewHolder> {
 
-    private List<Parametr> mEvents;
+    private List<EntitySettings> mEvents;
     private Context mContext;
 
-    public RecyclerViewAdapter(List<Parametr> mEvents, Context context) {
+    public RecyclerViewAdapter(List<EntitySettings> mEvents, Context context) {
         this.mEvents = mEvents;
         this.mContext = context;
     }

@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.example.aleksandr.liberator.R;
+import com.example.aleksandr.liberator.data_base.Db;
 import com.example.aleksandr.liberator.fragments.process_fragments.EndProcess;
 import com.example.aleksandr.liberator.fragments.process_fragments.ProcessFragment;
 import com.example.aleksandr.liberator.fragments.start_fragments.PowerFragment;
@@ -56,10 +57,13 @@ public class StartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_start);
         fragmentManager = getFragmentManager();
 
+        createDataBase();
+
         runSplash();
         setUi();
 
     }
+
 
     /**
      * create and init all view
@@ -336,4 +340,21 @@ public class StartActivity extends AppCompatActivity {
                 }
             }, 2000);
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // closed Db
+        Db.stopRealm(StartActivity.this);
+    }
+
+    /**
+     * Added data in Db if it not exist
+     */
+    private void createDataBase() {
+        if (Db.getInstance(StartActivity.this).getAllCountSettingsValues() <= 0) {
+            Db.added
+        }
+    }
+
 }

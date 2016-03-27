@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.example.aleksandr.liberator.R;
 import com.example.aleksandr.liberator.adapters.RecyclerViewAdapter;
-import com.example.aleksandr.liberator.entity.Parametr;
+import com.example.aleksandr.liberator.data_base.entity.EntitySettings;
 import com.example.aleksandr.liberator.static_params.StaticParams;
 
 import java.util.List;
@@ -20,7 +20,7 @@ public class SettingsSetParamsActivity extends AppCompatActivity {
 
     private int resTitle;
     private int resColorCategory;
-    private List<Parametr> mListEvents;
+    private List<EntitySettings> mListEvents;
 
 
     @Override
