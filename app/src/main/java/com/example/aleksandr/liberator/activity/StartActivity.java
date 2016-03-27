@@ -13,11 +13,11 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.example.aleksandr.liberator.R;
+import com.example.aleksandr.liberator.bluetooth.BTAdapter;
 import com.example.aleksandr.liberator.fragments.process_fragments.EndProcess;
 import com.example.aleksandr.liberator.fragments.process_fragments.ProcessFragment;
 import com.example.aleksandr.liberator.fragments.start_fragments.PowerFragment;
 import com.example.aleksandr.liberator.fragments.start_fragments.SetTemperatureWaterFragment;
-import com.example.aleksandr.liberator.fragments.start_fragments.SplashFragment;
 import com.example.aleksandr.liberator.fragments.start_fragments.TemperatureAirFragment;
 import com.example.aleksandr.liberator.fragments.start_fragments.TemperatureWaterNowFragment;
 import com.example.aleksandr.liberator.static_params.StaticParams;
@@ -58,6 +58,10 @@ public class StartActivity extends AppCompatActivity {
 
         runSplash();
         setUi();
+
+        Intent mIntent = new Intent(this, BTAdapter.class);
+        mIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        startActivity(mIntent);
 
     }
 
@@ -235,14 +239,14 @@ public class StartActivity extends AppCompatActivity {
      */
     private void runSplash() {
         pressedButtonStart = false;
-        if (StaticParams.SHOW_SPLASH) {
+        /*if (StaticParams.SHOW_SPLASH) {
             StaticParams.SHOW_SPLASH = false;
             SplashFragment splashFragment = new SplashFragment();
             fragmentManager.beginTransaction()
                     .replace(R.id.main_container, splashFragment, StaticParams.TAG_SPLASH_FRAGMENT)
                     .addToBackStack(null)
                     .commit();
-        } else setStartFragment();
+        } else*/ setStartFragment();
     }
 
     public void setStartFragment() {

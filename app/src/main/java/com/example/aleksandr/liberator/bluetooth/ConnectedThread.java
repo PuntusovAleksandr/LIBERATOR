@@ -47,6 +47,7 @@ public class ConnectedThread extends Thread {
             try {
                 // Read from the InputStream
                 bytes = mmInStream.read(buffer);
+                System.out.println("Buffer inStream " + bytes);
                 // Send the obtained bytes to the UI activity
                 mHandler.obtainMessage(BluetoothHandler.MESSAGE_READ, bytes, -1, buffer)
                         .sendToTarget();
