@@ -147,6 +147,7 @@ public class StartActivity extends AppCompatActivity {
         setInvisibleAllParams();
 
         imageViewPress.setEnabled(true);
+        showStartFragment = StaticParams.MIN_START_FRAGMENT;
     }
 
     /**
@@ -163,6 +164,7 @@ public class StartActivity extends AppCompatActivity {
 
         disableButtonLeftRight();
         imageViewPress.setEnabled(false);
+        enableProcessEnd = false;
     }
 
 
