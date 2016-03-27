@@ -56,8 +56,8 @@
         </activity>
 
         <activity android:name=".bluetooth.BTAdapter"
-            android:theme="@android:style/Theme.NoDisplay"
-            android:launchMode=""/>
+            android:theme="@android:style/Theme.NoDisplay"/>
+            <!--android:launchMode=""/>-->
     </application>
 
 </manifest>
