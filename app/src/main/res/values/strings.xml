@@ -36,8 +36,20 @@
     <string name="set_temperature">Установ. Температура\nкотловой воды</string>
     <string name="air_">Воздух</string>
     <string name="celsij">C</string>
-    <string name="power_value">kWt</string>
+    <string name="percent">%</string>
+    <string name="power_value">kW</string>
     <string name="temperature_boiler_for_disable">Температура котловой воды для отключения горелки</string>
-    <string name="defoult_param" />
-    <string name="defoult_value">0</string>
+    <string name="default_param" />
+    <string name="default_value">0</string>
+    <string name="delta_boiler">Разница температур для включения горелки. Дельта котла</string>
+    <string name="temperature_smoke">Температура дымовых газов</string>
+    <string name="temperature_enable_pump">Температура включения насоса котловой воды</string>
+    <string name="cicle_clear_boiler">Цикл очистки котла по отношению к очистке горелки</string>
+    <string name="auto_start">Автозапуск</string>
+    <string name="mode">Режим работы</string>
+    <string name="standart">Стандарт</string>
+    <string name="fuel_loading">Заагрузка топлива</string>
+    <string name="system_burn">Система розжига</string>
+    <string name="control_relay">Управление электромагнитным реле</string>
+    <string name="settings_module">Настройки по модели горелки</string>
 </resources>

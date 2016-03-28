@@ -1,7 +1,6 @@
 package com.example.aleksandr.liberator.data_base.entity;
 
 
-import io.realm.RealmList;
 import io.realm.RealmObject;
 
 /**
@@ -15,7 +14,6 @@ public class EntitySettings extends RealmObject{
     private String values;
     private String addressDevice;
     private String countParam;
-    private RealmList<ParamForSettings> massValues;
     private int id;
 
 
@@ -68,14 +66,6 @@ public class EntitySettings extends RealmObject{
 
     public void setCountParam(String countParam) {
         this.countParam = countParam;
-    }
-
-    public RealmList<ParamForSettings> getMassValues() {
-        return massValues;
-    }
-
-    public void setMassValues(RealmList<ParamForSettings> massValues) {
-        this.massValues = massValues;
     }
 
     public int getId() {

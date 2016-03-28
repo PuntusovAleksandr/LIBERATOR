@@ -2,7 +2,9 @@ package com.example.aleksandr.liberator.activity;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.Snackbar;
@@ -14,6 +16,7 @@ import android.widget.RelativeLayout;
 
 import com.example.aleksandr.liberator.R;
 import com.example.aleksandr.liberator.data_base.Db;
+import com.example.aleksandr.liberator.data_base.added_params.AddParamsToDb;
 import com.example.aleksandr.liberator.fragments.process_fragments.EndProcess;
 import com.example.aleksandr.liberator.fragments.process_fragments.ProcessFragment;
 import com.example.aleksandr.liberator.fragments.start_fragments.PowerFragment;
@@ -22,6 +25,7 @@ import com.example.aleksandr.liberator.fragments.start_fragments.SplashFragment;
 import com.example.aleksandr.liberator.fragments.start_fragments.TemperatureAirFragment;
 import com.example.aleksandr.liberator.fragments.start_fragments.TemperatureWaterNowFragment;
 import com.example.aleksandr.liberator.static_params.StaticParams;
+import com.example.aleksandr.liberator.utils.Settings;
 import com.example.aleksandr.liberator.utils.Utils;
 
 public class StartActivity extends AppCompatActivity {
@@ -131,7 +135,7 @@ public class StartActivity extends AppCompatActivity {
                     intent = new Intent(StartActivity.this, SettingsAppActivity.class);
                     startActivity(intent);
                     break;
-             // press inner icon
+                // press inner icon
                 case R.id.iv_circle_start_press:
                     intent = new Intent(StartActivity.this, SetLocalParamActivity.class);
                     intent.putExtra(StaticParams.SHOW_FRAGMENT, showStartFragment);
@@ -329,16 +333,16 @@ public class StartActivity extends AppCompatActivity {
             return;
         }
 
-            this.doubleBackToExitPressedOnce = true;
-            Snackbar.make(ibLeft, R.string.double_click_to_exit, Snackbar.LENGTH_SHORT).show();
+        this.doubleBackToExitPressedOnce = true;
+        Snackbar.make(ibLeft, R.string.double_click_to_exit, Snackbar.LENGTH_SHORT).show();
 
-            new Handler().postDelayed(new Runnable() {
+        new Handler().postDelayed(new Runnable() {
 
-                @Override
-                public void run() {
-                    doubleBackToExitPressedOnce = false;
-                }
-            }, 2000);
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce = false;
+            }
+        }, 2000);
     }
 
     @Override
@@ -352,17 +356,13 @@ public class StartActivity extends AppCompatActivity {
      * Added data in Db if it not exist
      */
     private void createDataBase() {
-        if (Db.getInstance(StartActivity.this).getAllCountSettingsValues() <= 0) {
-            Db.getInstance(StartActivity.this).addedEntitySetting(
-                    1,
-                    StaticParams.TYPE_BOILER,
-                    getString(R.string.temperature_boiler_for_disable),
-                    getString(R.string.celsij),
-                    getString(R.string.defoult_value),
-                    getString(R.string.defoult_value),
-                    getString(R.string.defoult_value),
-                    null);
+        SharedPreferences sharedPreferences
+                = getSharedPreferences(Settings.FILE_NAME, Context.MODE_PRIVATE);
+        if (Db.getInstance(StartActivity.this).getAllCountSettingsValues() <= 0 &&
+                !Settings.isFirstStart(sharedPreferences)) {
+            new AddParamsToDb(StartActivity.this);
         }
     }
+
 
 }

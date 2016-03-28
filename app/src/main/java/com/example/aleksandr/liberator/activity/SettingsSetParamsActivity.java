@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.aleksandr.liberator.R;
 import com.example.aleksandr.liberator.adapters.RecyclerViewAdapter;
+import com.example.aleksandr.liberator.data_base.Db;
 import com.example.aleksandr.liberator.data_base.entity.EntitySettings;
 import com.example.aleksandr.liberator.static_params.StaticParams;
 
@@ -18,9 +19,9 @@ import java.util.List;
 
 public class SettingsSetParamsActivity extends AppCompatActivity {
 
-    private int resTitle;
-    private int resColorCategory;
+    private int resTitle, resColorCategory;
     private List<EntitySettings> mListEvents;
+    private String typeContent;
 
 
     @Override
@@ -32,11 +33,13 @@ public class SettingsSetParamsActivity extends AppCompatActivity {
         resColorCategory = getIntent().getIntExtra(StaticParams.KEY_COLOR, R.color.black);
 
         initToolBar();
+        setTypeContent();
 
         RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_params);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
         mRecyclerView.setLayoutManager(linearLayoutManager);
         mRecyclerView.setHasFixedSize(true);
+        mListEvents = Db.getInstance(SettingsSetParamsActivity.this).getSettingsByContent(typeContent);
         RecyclerViewAdapter mRecyclerViewAdapter
                 = new RecyclerViewAdapter(mListEvents, SettingsSetParamsActivity.this);
 
@@ -51,6 +54,20 @@ public class SettingsSetParamsActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void setTypeContent() {
+        switch (resTitle) {
+            case R.string.params_boiler:
+                typeContent = StaticParams.TYPE_BOILER;
+                break;
+            case R.string.params_burner:
+                typeContent = StaticParams.TYPE_BURN;
+                break;
+            case R.string.service:
+                typeContent = StaticParams.TYPE_MENU;
+                break;
+        }
     }
 
     private void initToolBar() {

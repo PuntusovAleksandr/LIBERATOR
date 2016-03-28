@@ -30,24 +30,27 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public class ItemViewHolder extends RecyclerView.ViewHolder {
         CardView mCardView;
-        TextView tvTitle, tvStart, tvDescription;
-        ImageView ivColor;
+        TextView tvTitle, tvValues;
+        ImageView ivMin, ivPluse;
 
         public ItemViewHolder(View itemView) {
             super(itemView);
             mCardView = (CardView) itemView.findViewById(R.id.cv_day);
-            tvStart = (TextView) itemView.findViewById(R.id.tv_start_event);
-            tvTitle = (TextView) itemView.findViewById(R.id.tv_title_event);
-            tvDescription = (TextView) itemView.findViewById(R.id.tv_description_event);
+            tvTitle = (TextView) itemView.findViewById(R.id.tv_title_param_set);
+            tvValues = (TextView) itemView.findViewById(R.id.tv_event_value);
 
-            ivColor = (ImageView) itemView.findViewById(R.id.iv_color_calendar);
+            ivMin = (ImageView) itemView.findViewById(R.id.iv_set_minusr);
+            ivPluse = (ImageView) itemView.findViewById(R.id.iv_set_pluse);
 
         }
     }
 
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
+        EntitySettings entitySettings = mEvents.get(position);
 
+        holder.tvTitle.setText(entitySettings.getId() + ". " + entitySettings.getTitle());
+        holder.tvValues.setText(entitySettings.getValues());
 
     }
 
