@@ -10,4 +10,6 @@
     <dimen name="icon_size_64dp">64dp</dimen>
     <dimen name="icon_settings_size">64dp</dimen>
     <dimen name="font_size_24">24sp</dimen>
+    <dimen name="font_size_20">20sp</dimen>
+    <dimen name="font_size_18">18sp</dimen>
 </resources>
