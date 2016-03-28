@@ -353,7 +353,15 @@ public class StartActivity extends AppCompatActivity {
      */
     private void createDataBase() {
         if (Db.getInstance(StartActivity.this).getAllCountSettingsValues() <= 0) {
-            Db.added
+            Db.getInstance(StartActivity.this).addedEntitySetting(
+                    1,
+                    StaticParams.TYPE_BOILER,
+                    getString(R.string.temperature_boiler_for_disable),
+                    getString(R.string.celsij),
+                    getString(R.string.defoult_value),
+                    getString(R.string.defoult_value),
+                    getString(R.string.defoult_value),
+                    null);
         }
     }
 

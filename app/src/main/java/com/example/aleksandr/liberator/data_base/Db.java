@@ -3,10 +3,12 @@ package com.example.aleksandr.liberator.data_base;
 import android.content.Context;
 
 import com.example.aleksandr.liberator.data_base.entity.EntitySettings;
+import com.example.aleksandr.liberator.data_base.entity.ParamForSettings;
 import com.example.aleksandr.liberator.static_params.StaticParams;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
+import io.realm.RealmList;
 
 
 /**
@@ -32,6 +34,7 @@ public class Db {
             setRealmConfig(context);
         }
     }
+
     private void setRealmConfig(Context context) {
         realm = Realm.getInstance(
                 new RealmConfiguration.Builder(context)
@@ -59,6 +62,25 @@ public class Db {
 
     public long getAllCountSettingsValues() {
         return realm.where(EntitySettings.class).count();
+    }
+
+
+    public void addedEntitySetting(int id, String typeContent, String title, String param,
+                                          String values, String addressDevice, String count,
+                                          RealmList<ParamForSettings> massValues) {
+        EntitySettings setting = new EntitySettings();
+        setting.setId(id);
+        setting.setTypeContent(typeContent);
+        setting.setTitle(title);
+        setting.setParam(param);
+        setting.setValues(values);
+        setting.setAddressDevice(addressDevice);
+        setting.setCountParam(count);
+        setting.setMassValues(massValues);
+
+        realm.beginTransaction();
+        realm.copyToRealm(setting);
+        realm.commitTransaction();
     }
 
 

@@ -37,4 +37,7 @@
     <string name="air_">Воздух</string>
     <string name="celsij">C</string>
     <string name="power_value">kWt</string>
+    <string name="temperature_boiler_for_disable">Температура котловой воды для отключения горелки</string>
+    <string name="defoult_param" />
+    <string name="defoult_value">0</string>
 </resources>

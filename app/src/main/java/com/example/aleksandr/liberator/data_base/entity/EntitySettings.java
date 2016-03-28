@@ -16,6 +16,7 @@ public class EntitySettings extends RealmObject{
     private String addressDevice;
     private String countParam;
     private RealmList<ParamForSettings> massValues;
+    private int id;
 
 
     public EntitySettings() {
@@ -75,5 +76,13 @@ public class EntitySettings extends RealmObject{
 
     public void setMassValues(RealmList<ParamForSettings> massValues) {
         this.massValues = massValues;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

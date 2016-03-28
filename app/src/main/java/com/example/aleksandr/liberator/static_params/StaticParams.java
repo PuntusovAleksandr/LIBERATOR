@@ -44,6 +44,9 @@ public class StaticParams {
      * for name data base
      */
     public static final String DEFAULT_NAME_DB = "Liberator" ;
-
     public static final int VERSION_DB = 1;
+
+    public static final String TYPE_BOILER = "boiler";
+    public static final String TYPE_BURN = "burn";
+    public static final String TYPE_MENU = "menu";
 }
