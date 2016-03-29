@@ -31,7 +31,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public class ItemViewHolder extends RecyclerView.ViewHolder {
         CardView mCardView;
         TextView tvTitle, tvValues;
-        ImageView ivMin, ivPluse;
+        ImageView ivMin, ivPluse, iyOk;
 
         public ItemViewHolder(View itemView) {
             super(itemView);
@@ -41,6 +41,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
             ivMin = (ImageView) itemView.findViewById(R.id.iv_set_minusr);
             ivPluse = (ImageView) itemView.findViewById(R.id.iv_set_pluse);
+            iyOk = (ImageView) itemView.findViewById(R.id.iv_set_ok);
 
         }
     }
