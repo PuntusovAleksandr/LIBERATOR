@@ -55,7 +55,6 @@
                 android:value="com.example.aleksandr.liberator.activity.SettingsAppActivity" />
         </activity>
 
-        <activity android:name=".bluetooth.BTAdapter"/>
 
         <service android:name=".bluetooth.service.BluetoothService">
             <intent-filter>
