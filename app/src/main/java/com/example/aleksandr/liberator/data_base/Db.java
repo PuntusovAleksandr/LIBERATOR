@@ -95,7 +95,8 @@ public class Db {
      * @param count
      */
     public void addedEntitySetting(int id, String typeContent, String title, String param,
-                                   String values, String addressDevice, String count) {
+                                   String values, String addressDevice, String count,
+                                   String minValue, String maxValue) {
         EntitySettings setting = new EntitySettings();
         setting.setId(id);
         setting.setTypeContent(typeContent);
@@ -104,6 +105,8 @@ public class Db {
         setting.setValues(values);
         setting.setAddressDevice(addressDevice);
         setting.setCountParam(count);
+        setting.setMinValue(minValue);
+        setting.setMaxValue(maxValue);
 
         realm.beginTransaction();
         realm.copyToRealm(setting);

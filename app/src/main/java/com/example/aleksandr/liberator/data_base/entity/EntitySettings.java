@@ -15,9 +15,28 @@ public class EntitySettings extends RealmObject{
     private String addressDevice;
     private String countParam;
     private int id;
+    private String minValue;
+    private String maxValue;
 
 
     public EntitySettings() {
+    }
+
+
+    public String getMinValue() {
+        return minValue;
+    }
+
+    public void setMinValue(String minValue) {
+        this.minValue = minValue;
+    }
+
+    public String getMaxValue() {
+        return maxValue;
+    }
+
+    public void setMaxValue(String maxValue) {
+        this.maxValue = maxValue;
     }
 
     public String getTypeContent() {
