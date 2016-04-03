@@ -17,6 +17,7 @@ import android.widget.RelativeLayout;
 import com.example.aleksandr.liberator.R;
 import com.example.aleksandr.liberator.data_base.Db;
 import com.example.aleksandr.liberator.data_base.added_params.AddParamsToDb;
+import com.example.aleksandr.liberator.bluetooth.BTAdapter;
 import com.example.aleksandr.liberator.fragments.process_fragments.EndProcess;
 import com.example.aleksandr.liberator.fragments.process_fragments.ProcessFragment;
 import com.example.aleksandr.liberator.fragments.start_fragments.PowerFragment;
@@ -66,8 +67,11 @@ public class StartActivity extends AppCompatActivity {
         runSplash();
         setUi();
 
-    }
+        Intent mIntent = new Intent(this, BTAdapter.class);
+        mIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        startActivity(mIntent);
 
+    }
 
     /**
      * create and init all view
@@ -245,14 +249,14 @@ public class StartActivity extends AppCompatActivity {
      */
     private void runSplash() {
         pressedButtonStart = false;
-        if (StaticParams.SHOW_SPLASH) {
+        /*if (StaticParams.SHOW_SPLASH) {
             StaticParams.SHOW_SPLASH = false;
             SplashFragment splashFragment = new SplashFragment();
             fragmentManager.beginTransaction()
                     .replace(R.id.main_container, splashFragment, StaticParams.TAG_SPLASH_FRAGMENT)
                     .addToBackStack(null)
                     .commit();
-        } else setStartFragment();
+        } else*/ setStartFragment();
     }
 
     public void setStartFragment() {

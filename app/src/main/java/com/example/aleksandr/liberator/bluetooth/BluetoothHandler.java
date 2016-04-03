@@ -24,6 +24,8 @@ public class BluetoothHandler extends Handler {
 
     @Override
     public void handleMessage(Message message) {
+        System.out.println(message.what + " 0_0");
+
         switch (message.what) {
             case MESSAGE_READ:
                 break;
