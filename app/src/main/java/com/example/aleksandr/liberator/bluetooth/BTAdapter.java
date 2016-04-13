@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import com.example.aleksandr.liberator.R;
 import com.example.aleksandr.liberator.bluetooth.service.BluetoothService;
@@ -75,6 +76,8 @@ public class BTAdapter extends Activity {
         if (!initAdapter()) {
             //todo Toast warning
             //Device does not support Bluetooth
+            Toast.makeText(BTAdapter.this, R.string.devise_not_have_bluetoth, Toast.LENGTH_SHORT).show();
+
             finish();
             return;
         }
@@ -149,6 +152,7 @@ public class BTAdapter extends Activity {
                     break;
                 case RESULT_CANCELED:
                     //todo ask user to re-enable bt
+                    finish();
                     break;
                 default:
                     break;
