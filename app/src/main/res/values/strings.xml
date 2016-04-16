@@ -74,4 +74,6 @@
     <string name="sec">секунд</string>
     <string name="is_min_value">Это минимальный параметр</string>
     <string name="is_max_value">Это максимальный параметр</string>
+    <string name="enter_password">Для продолжения, необходимо ввести пароль из 6-ти символов</string>
+    <string name="ok">Ok</string>
 </resources>

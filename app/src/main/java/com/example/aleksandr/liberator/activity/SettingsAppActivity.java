@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.example.aleksandr.liberator.R;
+import com.example.aleksandr.liberator.dialog.ContextDialogEnterPassword;
 import com.example.aleksandr.liberator.static_params.StaticParams;
 import com.example.aleksandr.liberator.utils.Utils;
 
@@ -55,8 +56,9 @@ public class SettingsAppActivity extends AppCompatActivity {
                     goToSetParams(R.string.service, R.color.red);
                     break;
                 case R.id.rl_check:
-                    Intent intent = new Intent(SettingsAppActivity.this, DiagnosticActivity.class);
-                    startActivity(intent);
+
+                    new ContextDialogEnterPassword(SettingsAppActivity.this).show();
+
                     break;
                 case R.id.iv_button_back_settings:
                     onBackPressed();

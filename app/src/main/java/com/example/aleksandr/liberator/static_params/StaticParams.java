@@ -9,6 +9,8 @@ public class StaticParams {
     public static long TIME_START = 3;    // in sec
     public static boolean SHOW_SPLASH = true;
 
+    public static final String PASSWORD_ = "000000";
+
     /**
      * Tags for fragments
      */
@@ -63,5 +65,6 @@ public class StaticParams {
     public static final String[] SETTINGS_MODEL_PARAMS = new String[]{"20", "50", "100", "150", "200"};
     public static final String[] CHECK_PELLET_PARAMS = new String[]{"Норм.", "Мфгк.", "Ев."};
     public static final String[] SELECT_PELET = new String[]{"мягкая", "средняя", "твердая"};
+
 
 }
