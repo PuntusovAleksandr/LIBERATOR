@@ -109,9 +109,24 @@ public class Db {
         setting.setMaxValue(maxValue);
 
         realm.beginTransaction();
-        realm.copyToRealm(setting);
+        realm.copyToRealmOrUpdate(setting);
         realm.commitTransaction();
     }
 
+    /**
+     * save params from settings activity
+     * @param param - set param
+     * @param title - object in db
+     */
+    public void setParamByEntity(String param, String title) {
+        realm.beginTransaction();
 
+        EntitySettings entitySettings = realm.where(EntitySettings.class)
+                .equalTo("title", title)
+                .findFirst();
+        entitySettings.setValues(param);
+
+        realm.copyToRealmOrUpdate(entitySettings);
+        realm.commitTransaction();
+    }
 }

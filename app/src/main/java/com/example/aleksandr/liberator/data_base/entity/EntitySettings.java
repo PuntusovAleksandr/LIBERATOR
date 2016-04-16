@@ -2,6 +2,7 @@ package com.example.aleksandr.liberator.data_base.entity;
 
 
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 /**
  * Created by Aleksandr on 24.03.2016.
@@ -9,6 +10,7 @@ import io.realm.RealmObject;
 public class EntitySettings extends RealmObject{
 
     private String typeContent;
+    @PrimaryKey
     private String title;
     private String param;
     private String values;

@@ -20,6 +20,6 @@ public class Utils {
             public void run() {
                 v.setClickable(true);
             }
-        }, 1000);
+        }, 500);
     }
 }
