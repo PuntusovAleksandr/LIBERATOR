@@ -72,4 +72,6 @@
     <string name="pausa_betwen_load">Пауза между загрузками топлива в режиме – «Фитиль»</string>
     <string name="enable_out_termosstat">Внешний термостат</string>
     <string name="sec">секунд</string>
+    <string name="is_min_value">Это минимальный параметр</string>
+    <string name="is_max_value">Это максимальный параметр</string>
 </resources>
