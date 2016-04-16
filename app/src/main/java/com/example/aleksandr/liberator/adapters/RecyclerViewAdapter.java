@@ -102,8 +102,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                         break;
 
                     case R.id.iv_set_ok:
-                        // TODO: 16.04.2016 надо сделать запись в базу данных параметра paramValue
-
                         Db.getInstance(mContext).setParamByEntity(textValue, entitySettings.getTitle());
                         break;
 
