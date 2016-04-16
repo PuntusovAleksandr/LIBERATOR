@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:background="@color/black"
-    style="@style/AppTheme.DarkBackground"
     tools:context="com.example.aleksandr.liberator.activity.SettingsAppActivity">
 
     <include layout="@layout/replace_toolbar" />

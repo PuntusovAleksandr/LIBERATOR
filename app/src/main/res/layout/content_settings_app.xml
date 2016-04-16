@@ -8,7 +8,6 @@
     android:layout_marginRight="@dimen/activity_horizontal_margin"
     android:orientation="horizontal"
     android:paddingBottom="?attr/actionBarSize"
-    android:theme="@style/AppTheme.AppBarOverlay"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.aleksandr.liberator.activity.SettingsAppActivity"
     tools:showIn="@layout/activity_settings_app">

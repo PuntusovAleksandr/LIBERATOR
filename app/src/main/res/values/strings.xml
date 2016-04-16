@@ -76,4 +76,5 @@
     <string name="is_max_value">Это максимальный параметр</string>
     <string name="enter_password">Для продолжения, необходимо ввести пароль из 6-ти символов</string>
     <string name="ok">Ok</string>
+    <string name="invalid_password">Пароль не верный!</string>
 </resources>

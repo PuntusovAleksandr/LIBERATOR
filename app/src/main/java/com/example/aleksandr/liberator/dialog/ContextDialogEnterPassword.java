@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.NetworkInfo;
 import android.support.design.widget.Snackbar;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -38,19 +39,36 @@ public class ContextDialogEnterPassword extends AlertDialog {
         final EditText mTextPassword = (EditText) view.findViewById(R.id.et_enter_password);
         Button mButtonOk = (Button) view.findViewById(R.id.bi_ok_password);
 
+        mTextPassword.setOnKeyListener(new View.OnKeyListener() {
+                                           public boolean onKey(View v, int keyCode, KeyEvent event) {
+                                               if (event.getAction() == KeyEvent.ACTION_DOWN &&
+                                                       (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                                                   goToDiagnostic(v, mTextPassword, mContext);
+                                                   return true;
+                                               }
+                                               return false;
+                                           }
+                                       }
+        );
+
         mButtonOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Utils.disableButton(v);
-                if (mTextPassword.getText().toString().equals(StaticParams.PASSWORD_)) {
-                    Intent intent = new Intent(mContext, DiagnosticActivity.class);
-                    mContext.startActivity(intent);
-                } else {
-                    Snackbar.make(v, "Пароль не верный!", Snackbar.LENGTH_SHORT).show();
-                }
-                cancel();
+                goToDiagnostic(v, mTextPassword, mContext);
+
             }
         });
+        this.setView(view);
+    }
 
+    private void goToDiagnostic(View v, EditText mTextPassword, Context mContext) {
+        if (mTextPassword.getText().toString().equals(StaticParams.PASSWORD_)) {
+            Intent intent = new Intent(mContext, DiagnosticActivity.class);
+            mContext.startActivity(intent);
+            cancel();
+        } else {
+            Snackbar.make(v, R.string.invalid_password, Snackbar.LENGTH_SHORT).show();
+        }
     }
 }
