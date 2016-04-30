@@ -39,7 +39,7 @@
     <string name="percent">%</string>
     <string name="power_value">kW</string>
     <string name="temperature_boiler_for_disable">Температура котловой воды для отключения горелки</string>
-    <string name="default_param" />
+    <string name="default_param"/>
     <string name="default_value">1</string>
     <string name="gisteresis">Гистерезис температуры</string>
     <string name="delta_boiler">Разница температур для включения горелки. Дельта котла</string>
@@ -77,4 +77,6 @@
     <string name="enter_password">Для продолжения, необходимо ввести пароль из 6-ти символов</string>
     <string name="ok">Ok</string>
     <string name="invalid_password">Пароль не верный!</string>
+    <string name="close_after_five_sec">Программа будет закрыта через 2 секунды</string>
+    <string name="none_paired">Select Me!</string>
 </resources>

@@ -17,12 +17,10 @@ import android.widget.RelativeLayout;
 import com.example.aleksandr.liberator.R;
 import com.example.aleksandr.liberator.data_base.Db;
 import com.example.aleksandr.liberator.data_base.added_params.AddParamsToDb;
-import com.example.aleksandr.liberator.bluetooth.BTAdapter;
 import com.example.aleksandr.liberator.fragments.process_fragments.EndProcess;
 import com.example.aleksandr.liberator.fragments.process_fragments.ProcessFragment;
 import com.example.aleksandr.liberator.fragments.start_fragments.PowerFragment;
 import com.example.aleksandr.liberator.fragments.start_fragments.SetTemperatureWaterFragment;
-import com.example.aleksandr.liberator.fragments.start_fragments.SplashFragment;
 import com.example.aleksandr.liberator.fragments.start_fragments.TemperatureAirFragment;
 import com.example.aleksandr.liberator.fragments.start_fragments.TemperatureWaterNowFragment;
 import com.example.aleksandr.liberator.static_params.StaticParams;
@@ -67,9 +65,9 @@ public class StartActivity extends AppCompatActivity {
         runSplash();
         setUi();
 
-        Intent mIntent = new Intent(this, BTAdapter.class);
-        mIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        startActivity(mIntent);
+//        Intent mIntent = new Intent(this, BTAdapter.class);
+//        mIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+//        startActivity(mIntent);
 
     }
 
