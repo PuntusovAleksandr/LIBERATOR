@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                tools:context="com.example.aleksandr.liberator.fragments.start_fragments.AutoStartFragment">
+
+    <TextView
+        android:id="@+id/tv_center_auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:text="@string/auto_start_text"
+        android:textSize="@dimen/font_size_splash"/>
+
+    <TextView
+        android:id="@+id/tv_time_auto_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_center_auto"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:gravity="center"
+        android:textSize="@dimen/font_size_splash"/>
+
+    <ImageButton
+        android:id="@+id/ib_stop_auto_start"
+        android:layout_width="@dimen/size_icon"
+        android:layout_height="@dimen/size_icon"
+android:layout_centerHorizontal="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:background="@color/transparent"
+        android:src="@drawable/stop"/>
+
+
+</RelativeLayout>

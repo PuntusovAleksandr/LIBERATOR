@@ -19,6 +19,7 @@ import com.example.aleksandr.liberator.data_base.Db;
 import com.example.aleksandr.liberator.data_base.added_params.AddParamsToDb;
 import com.example.aleksandr.liberator.fragments.process_fragments.EndProcess;
 import com.example.aleksandr.liberator.fragments.process_fragments.ProcessFragment;
+import com.example.aleksandr.liberator.fragments.start_fragments.AutoStartFragment;
 import com.example.aleksandr.liberator.fragments.start_fragments.PowerFragment;
 import com.example.aleksandr.liberator.fragments.start_fragments.SetTemperatureWaterFragment;
 import com.example.aleksandr.liberator.fragments.start_fragments.TemperatureAirFragment;
@@ -27,13 +28,14 @@ import com.example.aleksandr.liberator.static_params.StaticParams;
 import com.example.aleksandr.liberator.utils.Settings;
 import com.example.aleksandr.liberator.utils.Utils;
 
-public class StartActivity extends AppCompatActivity {
+public class StartActivity extends AppCompatActivity
+        implements AutoStartFragment.OnFragmentInteractionListener {
 
     private FragmentManager fragmentManager;
 
     private ImageButton ibStartStop, ibSettings, ibLeft, ibRight;
     private ImageView ivFullIcon, imageViewPress;
-    private RelativeLayout rlLeftParams, rlAir, rlProgress;
+    private RelativeLayout rlLeftParams, rlAir, rlProgress, rlCenter;
 
     /**
      * flag for check pressed button "Start" / "Stop"
@@ -60,14 +62,21 @@ public class StartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_start);
         fragmentManager = getFragmentManager();
 
-        setStartFragment();
         setUi();
+
+        if (Db.getInstance(StartActivity.this).isAutoStartEnable()) {
+            startAutoFragment();
+        } else {
+            setStartFragment();
+        }
+
 
 //        Intent mIntent = new Intent(this, BTAdapter.class);
 //        mIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
 //        startActivity(mIntent);
 
     }
+
 
     /**
      * create and init all view
@@ -85,6 +94,7 @@ public class StartActivity extends AppCompatActivity {
         rlLeftParams = (RelativeLayout) findViewById(R.id.rl_left_params);
         rlAir = (RelativeLayout) findViewById(R.id.rl_air_params);
         rlProgress = (RelativeLayout) findViewById(R.id.rl_progress_bar);
+        rlCenter = (RelativeLayout) findViewById(R.id.rl_center);
 
         ibStartStop.setOnClickListener(listener);
         ibSettings.setOnClickListener(listener);
@@ -146,6 +156,17 @@ public class StartActivity extends AppCompatActivity {
     };
 
 
+    private void startAutoFragment() {
+        rlCenter.setVisibility(View.INVISIBLE);
+        AutoStartFragment mAutoStartFragment =
+                (AutoStartFragment) getFragmentManager().
+                        findFragmentByTag(StaticParams.TAG_AUTO_START);
+        if (mAutoStartFragment == null) {
+            mAutoStartFragment = new AutoStartFragment();
+        }
+        setFragment(mAutoStartFragment, StaticParams.TAG_AUTO_START);
+    }
+
     /**
      * when pressed button "Stop"
      */
@@ -199,6 +220,7 @@ public class StartActivity extends AppCompatActivity {
         String tag;
         Fragment fragment;
         switch (showStartFragment) {
+
             case StaticParams.SHOW_TEMPERATURE_NOW:
                 tag = StaticParams.TAG_TEMPERATURE_NOW_FRAGMENT;
                 fragment = getFragmentManager().findFragmentByTag(tag);
@@ -207,6 +229,7 @@ public class StartActivity extends AppCompatActivity {
                 }
                 setFragment(fragment, tag);
                 break;
+
             case StaticParams.SHOW_POWER:
                 tag = StaticParams.TAG_POWER_FRAGMENT;
                 fragment = getFragmentManager().findFragmentByTag(tag);
@@ -215,6 +238,7 @@ public class StartActivity extends AppCompatActivity {
                 }
                 setFragment(fragment, tag);
                 break;
+
             case StaticParams.SHOW_TEMPERATURE_WATER:
                 tag = StaticParams.TAG_WATER_FRAGMENT;
                 fragment = getFragmentManager().findFragmentByTag(tag);
@@ -223,6 +247,7 @@ public class StartActivity extends AppCompatActivity {
                 }
                 setFragment(fragment, tag);
                 break;
+
             case StaticParams.SHOW_TEMPERATURE_AIR:
                 tag = StaticParams.TAG_AIR_FRAGMENT;
                 fragment = getFragmentManager().findFragmentByTag(tag);
@@ -336,5 +361,17 @@ public class StartActivity extends AppCompatActivity {
         super.onDestroy();
         // closed Db
         Db.stopRealm(StartActivity.this);
+    }
+
+    @Override
+    public void autoStartIsEnable() {
+        autoStartDisable();
+        pressButtonStart();
+    }
+
+    @Override
+    public void autoStartDisable() {
+        rlCenter.setVisibility(View.VISIBLE);
+        setStartFragment();
     }
 }
