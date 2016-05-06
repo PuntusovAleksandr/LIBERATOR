@@ -60,9 +60,7 @@ public class StartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_start);
         fragmentManager = getFragmentManager();
 
-        createDataBase();
-
-        runSplash();
+        setStartFragment();
         setUi();
 
 //        Intent mIntent = new Intent(this, BTAdapter.class);
@@ -242,20 +240,6 @@ public class StartActivity extends AppCompatActivity {
                 .commit();
     }
 
-    /**
-     * By first start call this method
-     */
-    private void runSplash() {
-        pressedButtonStart = false;
-        /*if (StaticParams.SHOW_SPLASH) {
-            StaticParams.SHOW_SPLASH = false;
-            SplashFragment splashFragment = new SplashFragment();
-            fragmentManager.beginTransaction()
-                    .replace(R.id.main_container, splashFragment, StaticParams.TAG_SPLASH_FRAGMENT)
-                    .addToBackStack(null)
-                    .commit();
-        } else*/ setStartFragment();
-    }
 
     public void setStartFragment() {
         TemperatureWaterNowFragment temperatureWaterNowFragment =
@@ -353,18 +337,4 @@ public class StartActivity extends AppCompatActivity {
         // closed Db
         Db.stopRealm(StartActivity.this);
     }
-
-    /**
-     * Added data in Db if it not exist
-     */
-    private void createDataBase() {
-        SharedPreferences sharedPreferences
-                = getSharedPreferences(Settings.FILE_NAME, Context.MODE_PRIVATE);
-        if (Db.getInstance(StartActivity.this).getAllCountSettingsValues() <= 0 &&
-                !Settings.isFirstStart(sharedPreferences)) {
-            new AddParamsToDb(StartActivity.this);
-        }
-    }
-
-
 }

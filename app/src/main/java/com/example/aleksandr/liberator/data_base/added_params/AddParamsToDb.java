@@ -29,7 +29,7 @@ public class AddParamsToDb {
 
         Db.getInstance(context).addedEntitySetting(
                 1, StaticParams.TYPE_MENU, context.getString(R.string.auto_start),
-                "", StaticParams.AUTO_START_PARAMS[0],
+                "", StaticParams.AUTO_START_PARAMS[1],
                 "22", StaticParams.AUTO_START_PARAMS.length + "",
                 StaticParams.AUTO_START_PARAMS[0], StaticParams.AUTO_START_PARAMS[StaticParams.AUTO_START_PARAMS.length - 1]
         );

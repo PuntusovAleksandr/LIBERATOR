@@ -33,6 +33,7 @@ public class TemperatureWaterNowFragment extends ShowParamFragment {
         tvTitle.setTextColor(color);
 
         ivIcon.setImageResource(R.drawable.termometr_blue);
+        // TODO: 02.05.2016 данные необходимо брать с БД
         tvParams.setText("25");
         tvParams.setTextColor(color);
 

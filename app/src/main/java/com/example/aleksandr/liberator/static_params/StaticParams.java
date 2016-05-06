@@ -21,6 +21,7 @@ public class StaticParams {
     public static final String TAG_WATER_FRAGMENT = "SetTemperatureWaterFragment";
     public static final String TAG_AIR_FRAGMENT = "TemperatureAirFragment";
     public static final String TAG_END_PROCESS_FRAGMENT = "EndProcess";
+    public static final String TAG_AUTO_START = "AutoStartFragment";
 
 
     /**
@@ -65,6 +66,7 @@ public class StaticParams {
     public static final String[] SETTINGS_MODEL_PARAMS = new String[]{"20", "50", "100", "150", "200"};
     public static final String[] CHECK_PELLET_PARAMS = new String[]{"Норм.", "Мфгк.", "Ев."};
     public static final String[] SELECT_PELET = new String[]{"мягкая", "средняя", "твердая"};
+
 
 
 }

@@ -2,6 +2,7 @@ package com.example.aleksandr.liberator.data_base;
 
 import android.content.Context;
 
+import com.example.aleksandr.liberator.R;
 import com.example.aleksandr.liberator.data_base.entity.EntitySettings;
 import com.example.aleksandr.liberator.static_params.StaticParams;
 
@@ -81,6 +82,17 @@ public class Db {
                 .findAll();
         all.sort("id");
         return all;
+    }
+
+    /**
+     * get status auto start
+     * @return
+     */
+    public boolean isAutoStartEnable() {
+        EntitySettings mEntitySettings = realm.where(EntitySettings.class)
+                .equalTo("title", context.getString(R.string.auto_start))
+                .findFirst();
+        return mEntitySettings.getValues().equals(StaticParams.AUTO_START_PARAMS[0]);
     }
 
 
