@@ -32,4 +32,7 @@ dependencies {
 
 
     compile 'io.realm:realm-android:0.87.4'
+
+    // for progress bae https://github.com/FilipPudak/ProgressPieView
+    compile 'com.github.filippudak.progresspieview:library:1.0.+'
 }

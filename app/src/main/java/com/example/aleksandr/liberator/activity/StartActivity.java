@@ -27,6 +27,7 @@ import com.example.aleksandr.liberator.fragments.start_fragments.TemperatureWate
 import com.example.aleksandr.liberator.static_params.StaticParams;
 import com.example.aleksandr.liberator.utils.Settings;
 import com.example.aleksandr.liberator.utils.Utils;
+import com.filippudak.ProgressPieView.ProgressPieView;
 
 public class StartActivity extends AppCompatActivity
         implements AutoStartFragment.OnFragmentInteractionListener {
@@ -55,6 +56,13 @@ public class StartActivity extends AppCompatActivity
      * for double closed
      */
     private boolean doubleBackToExitPressedOnce = false;
+
+    /**
+     * progress bar
+     */
+    private ProgressPieView mProgressPieView;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +104,9 @@ public class StartActivity extends AppCompatActivity
         rlProgress = (RelativeLayout) findViewById(R.id.rl_progress_bar);
         rlCenter = (RelativeLayout) findViewById(R.id.rl_center);
 
+        mProgressPieView = (ProgressPieView) findViewById(R.id.progressPieView);
+        setDataForProgressBar();
+
         ibStartStop.setOnClickListener(listener);
         ibSettings.setOnClickListener(listener);
         ibLeft.setOnClickListener(listener);
@@ -107,6 +118,11 @@ public class StartActivity extends AppCompatActivity
         enableProcessEnd = false;
 
         setInvisibleAllParams();
+    }
+
+    private void setDataForProgressBar() {
+        mProgressPieView.setProgress(333);
+        mProgressPieView.setText(333 + "");
     }
 
 
