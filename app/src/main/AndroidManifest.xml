@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.aleksandr.liberator">
+          package="com.example.aleksandr.liberator">
+
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
 
     <application
         android:allowBackup="true"
@@ -9,13 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".activity.MainActivity"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".activity.StartActivity"
             android:screenOrientation="landscape">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN"/>-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
         </activity>
         <activity
             android:name=".activity.SettingsAppActivity"
@@ -25,11 +37,11 @@
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.aleksandr.liberator.activity.StartActivity" />
+                android:value="com.example.aleksandr.liberator.activity.StartActivity"/>
         </activity>
         <activity
             android:name=".activity.SetLocalParamActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".activity.DiagnosticActivity"
             android:label="@string/title_activity_diagnostic"
@@ -38,7 +50,7 @@
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.aleksandr.liberator.activity.SettingsAppActivity" />
+                android:value="com.example.aleksandr.liberator.activity.SettingsAppActivity"/>
         </activity>
         <activity
             android:name=".activity.SettingsSetParamsActivity"
@@ -48,8 +60,17 @@
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.aleksandr.liberator.activity.SettingsAppActivity" />
+                android:value="com.example.aleksandr.liberator.activity.SettingsAppActivity"/>
         </activity>
+        <activity android:name=".bluetooth.BTAdapter"/>
+
+        <service android:name=".bluetooth.service.BluetoothService">
+            <intent-filter>
+                <action android:name="com.example.aleksandr.liberator.bluetooth.service.BluetoothService"/>
+            </intent-filter>
+        </service>
+
+
     </application>
 
 </manifest>

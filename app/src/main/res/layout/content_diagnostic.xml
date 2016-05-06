@@ -7,18 +7,235 @@
     android:layout_marginLeft="@dimen/activity_horizontal_margin"
     android:layout_marginRight="@dimen/activity_horizontal_margin"
     android:layout_marginTop="?attr/actionBarSize"
-    android:orientation="horizontal"
-    android:paddingBottom="?attr/actionBarSize"
-    android:theme="@style/AppTheme.AppBarOverlay"
+    android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.aleksandr.liberator.activity.DiagnosticActivity"
     tools:showIn="@layout/activity_diagnostic">
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="@dimen/size_icon"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:id="@+id/rl_heating_element"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/view_diagnostic_1">
+
+                <ImageView
+                    android:id="@+id/iv_heating_element"
+                    android:layout_width="@dimen/size_icon"
+                    android:layout_height="@dimen/size_icon"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/heating_element" />
+
+                <TextView
+                    android:id="@+id/text_heating_element"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_heating_element"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_horizontal"
+                    android:text="@string/heating_element"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/view_diagnostic_1"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_centerVertical="true" />
+
+            <RelativeLayout
+                android:id="@+id/rl_screw"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/view_diagnostic_1">
+
+                <ImageView
+                    android:id="@+id/iv_screw"
+                    android:layout_width="@dimen/size_icon"
+                    android:layout_height="@dimen/size_icon"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/screw" />
+
+                <TextView
+                    android:id="@+id/text_hopper_auger"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_screw"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_horizontal"
+                    android:text="@string/hopper_auger"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="@dimen/size_icon"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:id="@+id/rl_burner_auger"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/view_diagnostic_2">
+
+                <ImageView
+                    android:id="@+id/iv_burner_auger"
+                    android:layout_width="@dimen/size_icon"
+                    android:layout_height="@dimen/size_icon"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/burner_sugar" />
+
+                <TextView
+                    android:id="@+id/text_burner_auger"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_burner_auger"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_horizontal"
+                    android:text="@string/burner_auger"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/view_diagnostic_2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_centerVertical="true" />
+
+            <RelativeLayout
+                android:id="@+id/rl_fan"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/view_diagnostic_2">
+
+                <ImageView
+                    android:id="@+id/iv_fan"
+                    android:layout_width="@dimen/size_icon"
+                    android:layout_height="@dimen/size_icon"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/blow" />
+
+                <TextView
+                    android:id="@+id/text_fan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_fan"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_horizontal"
+                    android:text="@string/fan"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="@dimen/size_icon"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:id="@+id/rl_burner_cleaning"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/view_diagnostic_3">
+
+                <ImageView
+                    android:id="@+id/iv_burner_cleaning"
+                    android:layout_width="@dimen/size_icon"
+                    android:layout_height="@dimen/size_icon"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/burner_cleaning" />
+
+                <TextView
+                    android:id="@+id/text_burner_cleaning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_burner_cleaning"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_horizontal"
+                    android:text="@string/burner_cleaning"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/view_diagnostic_3"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_centerVertical="true" />
+
+            <RelativeLayout
+                android:id="@+id/rl_additional_relay"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/view_diagnostic_3">
+
+                <ImageView
+                    android:id="@+id/iv_additional_relay"
+                    android:layout_width="@dimen/size_icon"
+                    android:layout_height="@dimen/size_icon"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/addition_relay" />
+
+                <TextView
+                    android:id="@+id/text_additional_relay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_additional_relay"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_horizontal"
+                    android:text="@string/additional_relay"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
     <RelativeLayout
-        android:layout_width="@dimen/size_icon"
-        android:layout_height="match_parent"
-        android:layout_weight="0.5">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin">
 
         <ImageView
             android:id="@+id/iv_button_back_diagnostic"
@@ -26,216 +243,8 @@
             android:layout_height="@dimen/size_icon"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginLeft="@dimen/size_icon"
             android:src="@drawable/button_back" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="@dimen/size_icon"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/rl_heating_element"
-            android:layout_above="@+id/view_diagnostic_1">
-
-            <ImageView
-                android:id="@+id/iv_heating_element"
-                android:layout_width="@dimen/size_icon"
-                android:layout_height="@dimen/size_icon"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/heating_element" />
-
-            <TextView
-                android:id="@+id/text_heating_element"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/iv_heating_element"
-                android:layout_centerVertical="true"
-                android:gravity="center_horizontal"
-                android:text="@string/heating_element"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
-
-        </RelativeLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_centerVertical="true"
-            android:id="@+id/view_diagnostic_1"/>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/rl_screw"
-            android:layout_below="@+id/view_diagnostic_1">
-
-            <ImageView
-                android:id="@+id/iv_screw"
-                android:layout_width="@dimen/size_icon"
-                android:layout_height="@dimen/size_icon"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/screw" />
-
-            <TextView
-                android:id="@+id/text_hopper_auger"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/iv_screw"
-                android:layout_centerVertical="true"
-                android:gravity="center_horizontal"
-                android:text="@string/hopper_auger"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
-
-        </RelativeLayout>
-
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:layout_width="@dimen/size_icon"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/rl_burner_auger"
-            android:layout_above="@+id/view_diagnostic_2">
-
-            <ImageView
-                android:id="@+id/iv_burner_auger"
-                android:layout_width="@dimen/size_icon"
-                android:layout_height="@dimen/size_icon"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/burner_sugar" />
-
-            <TextView
-                android:id="@+id/text_burner_auger"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/iv_burner_auger"
-                android:layout_centerVertical="true"
-                android:gravity="center_horizontal"
-                android:text="@string/burner_auger"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
-
-        </RelativeLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_centerVertical="true"
-            android:id="@+id/view_diagnostic_2"/>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/rl_fan"
-            android:layout_below="@+id/view_diagnostic_2">
-
-            <ImageView
-                android:id="@+id/iv_fan"
-                android:layout_width="@dimen/size_icon"
-                android:layout_height="@dimen/size_icon"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/blow" />
-
-            <TextView
-                android:id="@+id/text_fan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/iv_fan"
-                android:layout_centerVertical="true"
-                android:gravity="center_horizontal"
-                android:text="@string/fan"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
-
-        </RelativeLayout>
-
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:layout_width="@dimen/size_icon"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/rl_burner_cleaning"
-            android:layout_above="@+id/view_diagnostic_3">
-
-            <ImageView
-                android:id="@+id/iv_burner_cleaning"
-                android:layout_width="@dimen/size_icon"
-                android:layout_height="@dimen/size_icon"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/burner_cleaning" />
-
-            <TextView
-                android:id="@+id/text_burner_cleaning"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/iv_burner_cleaning"
-                android:layout_centerVertical="true"
-                android:gravity="center_horizontal"
-                android:text="@string/burner_cleaning"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
-
-        </RelativeLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_centerVertical="true"
-            android:id="@+id/view_diagnostic_3"/>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/rl_additional_relay"
-            android:layout_below="@+id/view_diagnostic_3">
-
-            <ImageView
-                android:id="@+id/iv_additional_relay"
-                android:layout_width="@dimen/size_icon"
-                android:layout_height="@dimen/size_icon"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/addition_relay" />
-
-            <TextView
-                android:id="@+id/text_additional_relay"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/iv_additional_relay"
-                android:layout_centerVertical="true"
-                android:gravity="center_horizontal"
-                android:text="@string/additional_relay"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
-
-        </RelativeLayout>
 
     </RelativeLayout>
 

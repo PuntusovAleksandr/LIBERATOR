@@ -6,9 +6,10 @@ package com.example.aleksandr.liberator.static_params;
 public class StaticParams {
 
 
-
     public static long TIME_START = 3;    // in sec
     public static boolean SHOW_SPLASH = true;
+
+    public static final String PASSWORD_ = "000000";
 
     /**
      * Tags for fragments
@@ -20,6 +21,7 @@ public class StaticParams {
     public static final String TAG_WATER_FRAGMENT = "SetTemperatureWaterFragment";
     public static final String TAG_AIR_FRAGMENT = "TemperatureAirFragment";
     public static final String TAG_END_PROCESS_FRAGMENT = "EndProcess";
+    public static final String TAG_AUTO_START = "AutoStartFragment";
 
 
     /**
@@ -40,5 +42,31 @@ public class StaticParams {
      */
     public static final String KEY_TITLE = "key_title";
     public static final String KEY_COLOR = "key_color";
+
+    /**
+     * for name data base
+     */
+    public static final String DEFAULT_NAME_DB = "Liberator" ;
+    public static final int VERSION_DB = 1;
+
+    public static final String TYPE_BOILER = "boiler";
+    public static final String TYPE_BURN = "burn";
+    public static final String TYPE_MENU = "menu";
+
+
+    /**
+     * params for set values settings
+     */
+    public static final String[] AUTO_START_PARAMS = new String[]{"Да", "Нет"};
+    public static final String[] MODE_PARAMS = new String[]{"Пуск/Стоп", "Фитиль"};
+    public static final String[] LOAD_FUEL_PARAMS = new String[]{"импульсная загрузка выключена", "импульсная загрузка включена"};
+    public static final String[] SYSTEM_BURNING_PARAMS = new String[]{"Стандарт", "Волна"};
+    public static final String[] RELAY_PARAMS = new String[]{"Очистка Котла", "Насос подмеса", "Питатель бункера", "Выдача аварийного сигнала"};
+    public static final String[] OUT_TERMOSTAAT = new String[]{"Режим подключения внешнего термостата - NO", "– Режим подключения внешнего термостата - NC"};
+    public static final String[] SETTINGS_MODEL_PARAMS = new String[]{"20", "50", "100", "150", "200"};
+    public static final String[] CHECK_PELLET_PARAMS = new String[]{"Норм.", "Мфгк.", "Ев."};
+    public static final String[] SELECT_PELET = new String[]{"мягкая", "средняя", "твердая"};
+
+
 
 }

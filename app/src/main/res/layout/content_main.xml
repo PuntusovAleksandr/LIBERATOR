@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:theme="@style/AppTheme.AppBarOverlay"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".activity.StartActivity"
-    tools:showIn="@layout/activity_start">
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="horizontal"
+              app:layout_behavior="@string/appbar_scrolling_view_behavior"
+              tools:context=".activity.StartActivity"
+              tools:showIn="@layout/activity_start">
 
 
     <RelativeLayout
@@ -33,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/quality"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"/>
 
             <TextView
                 android:id="@+id/tv_param_quality"
@@ -43,7 +42,7 @@
                 android:gravity="center"
                 android:text="0"
                 android:textColor="@color/white"
-                android:textSize="24sp" />
+                android:textSize="24sp"/>
 
         </RelativeLayout>
 
@@ -71,6 +70,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/rl_center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="0.5">
@@ -81,7 +81,7 @@
             android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/full_start_circle_min" />
+            android:src="@drawable/full_start_circle_min"/>
 
         <ImageView
             android:id="@+id/iv_circle_start_press"
@@ -99,8 +99,8 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:background="@color/black"
-            android:src="@drawable/bt_right" />
+            android:background="@android:color/transparent"
+            android:src="@drawable/bt_right"/>
 
         <ImageButton
             android:id="@+id/ib_left"
@@ -109,8 +109,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
-            android:background="@color/black"
-            android:src="@drawable/bt_left" />
+            android:background="@android:color/transparent"
+            android:src="@drawable/bt_left"/>
 
         <ImageButton
             android:id="@+id/ib_settings"
@@ -120,8 +120,8 @@
             android:layout_marginBottom="@dimen/size_icon_process"
             android:layout_toLeftOf="@+id/ib_right"
             android:layout_toStartOf="@+id/ib_right"
-            android:background="@color/black"
-            android:src="@drawable/ic_settings" />
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_settings"/>
 
         <!--<include-->
         <!--layout="@layout/fragment_temperature_water_now"-->
@@ -154,7 +154,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/air"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"/>
 
             <TextView
                 android:id="@+id/tv_param_air"
@@ -164,7 +164,7 @@
                 android:gravity="center"
                 android:text="0"
                 android:textColor="@color/white"
-                android:textSize="24sp" />
+                android:textSize="24sp"/>
 
         </RelativeLayout>
 
@@ -179,7 +179,7 @@
             android:layout_marginEnd="@dimen/activity_horizontal_margin"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
             android:background="@color/transparent"
-            android:src="@drawable/start" />
+            android:src="@drawable/start"/>
 
         <RelativeLayout
             android:id="@+id/rl_progress_bar"
@@ -193,16 +193,20 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/fuel"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"/>
 
-            <ProgressBar
-                android:id="@+id/pb_fuel"
+            <com.filippudak.ProgressPieView.ProgressPieView
+                android:id="@+id/progressPieView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_fuel"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
                 android:gravity="center"
+                app:ppvMax="1000"
+                app:ppvProgress="0"
                 android:textColor="@color/white"
-                android:textSize="24sp" />
+                android:text="0"/>
 
         </RelativeLayout>
 

@@ -7,6 +7,7 @@
     android:layout_marginLeft="@dimen/activity_horizontal_margin"
     android:layout_marginRight="@dimen/activity_horizontal_margin"
     android:layout_marginTop="@dimen/activity_vertical_margin"
+    card_view:cardBackgroundColor="@android:color/transparent"
     card_view:cardElevation="0dp">
 
     <LinearLayout
@@ -15,35 +16,49 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tv_title_param"
+            android:id="@+id/tv_title_param_set"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/font_size_18"
+            android:gravity="center_vertical"
             android:layout_weight="1" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/iv_color_calendar"
-                android:layout_width="wrap_content"
+                android:id="@+id/iv_set_minusr"
+                android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_alignParentLeft="true" />
+                android:src="@drawable/minus"
+                android:layout_weight="1"/>
 
 
             <TextView
-                android:id="@+id/tv_title_event"
+                android:id="@+id/tv_event_value"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_start_event" />
+                android:gravity="center"
+                android:textSize="@dimen/font_size_18"
+                android:layout_weight="1" />
 
-            <TextView
-                android:id="@+id/tv_description_event"
+            <ImageView
+                android:id="@+id/iv_set_pluse"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_title_event" />
+                android:layout_height="50dp"
+                android:src="@drawable/pluse"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/iv_set_ok"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:src="@drawable/button_ok"
+                android:layout_weight="1"/>
 
         </LinearLayout>
 
